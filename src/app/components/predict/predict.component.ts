@@ -97,19 +97,19 @@ export class PredictComponent implements OnInit, OnDestroy {
     this.selectedHurricane = hurricane;
     this.showWindsToggle = true;
     if (hurricane === "daniel") {
-      this.windsImage = "url(/assets/images/winds_1_1.png)";
+      this.windsImage = "url(/sites/default/files/interactives/predict-hurricane/assets/images/winds_1_1.png)";
       this.selectLow(1);
       this.selectHigh(1);
     } else if (hurricane === "elizabeth") {
-      this.windsImage = "url(/assets/images/winds_2_1.png)";
+      this.windsImage = "url(/sites/default/files/interactives/predict-hurricane/assets/images/winds_2_1.png)";
       this.selectLow(2);
       this.selectHigh(1);
     } else if (hurricane === "marianne") {
-      this.windsImage = "url(/assets/images/winds_2_4.png)";
+      this.windsImage = "url(/sites/default/files/interactives/predict-hurricane/assets/images/winds_2_4.png)";
       this.selectLow(2);
       this.selectHigh(4);
     } else if (hurricane === "stephen") {
-      this.windsImage = "url(/assets/images/winds_4_3.png)";
+      this.windsImage = "url(/sites/default/files/interactives/predict-hurricane/assets/images/winds_4_3.png)";
       this.selectLow(4);
       this.selectHigh(3);
     }
@@ -125,7 +125,7 @@ export class PredictComponent implements OnInit, OnDestroy {
 
   playAudio(audioFile: string) {
     this.audio = new Audio();
-    this.audio.src = `/assets/audio/${audioFile}`;
+    this.audio.src = `/sites/default/files/interactives/predict-hurricane/assets/audio/${audioFile}`;
     this.audio.load();
     this.audio.play();
   }

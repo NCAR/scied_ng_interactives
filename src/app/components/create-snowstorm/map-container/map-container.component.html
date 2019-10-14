@@ -1,0 +1,172 @@
+<div id="map-stage-wrap" class="drag-boundary">
+<div class="map-bkg-container">
+    <!-- MAP BACKGROUNDS -->
+    <img id="map-01" src="assets/apps/create-snowstorm/map-01.jpg" class="map-bkg {{mb1}}" alt="base US map">
+    <img id="map-02" src="assets/apps/create-snowstorm/map-02.jpg" class="map-bkg {{mb2}}" alt="base US map with divider lines">
+
+    <!-- MAP OVERLAYS -->
+    <img id="map-overlay-01" src="assets/apps/create-snowstorm/map-overlay-01.png" class="map-bkg {{mo1}}" alt="northern region cold temperature selection">
+    <img id="map-overlay-02" src="assets/apps/create-snowstorm/map-overlay-02.png" class="map-bkg {{mo2}}" alt="northern region warm temperature selection">
+    <img id="map-overlay-03" src="assets/apps/create-snowstorm/map-overlay-03.png" class="map-bkg {{mo3}}" alt="southern region cold temperature selection">
+    <img id="map-overlay-04" src="assets/apps/create-snowstorm/map-overlay-04.png" class="map-bkg {{mo4}}" alt="southern region warm temperature selection">
+</div>
+<div class="overlays-container">
+    <!-- PROCEED DYNAMIC BOX-->
+    <div id="proceed-box" class="basebox paperboxed {{proceedVisibility}}">
+        <p>Great! For an upslope snow storm, high pressure is in the north and low pressure is in the south.<br><br>
+        Press next to proceed.  <button id="next-button" mat-raised-button color="primary" (click)="proceedToTemps()">Next &rarr;</button></p>
+    </div>
+
+    <!-- LAUNCH PAD -->
+    <div id="content-info" class="basebox {{stageOneContent}}">
+        <!-- Info text -->
+        <p class="spaced-text">Drag each system to the correct circle to create a storm, then press Go.</p>
+        <p class="spaced-text">{{hps}}</p>
+        <p class="spaced-text">{{lps}}</p>
+    </div>
+
+
+
+    <!-- LANDING PADS-->
+    <div id="landing-pads" class="{{mb2}}">
+        <div id="landing-pad-north"></div>
+        <div id="landing-pad-south"></div>
+    </div>
+
+    <!-- Draggable items-->
+    <div cdkDropListGroup>
+        <div id="launch-list">
+          <div
+            cdkDropList
+            cdkDropListDisabled="{{draggingDisabled}}"
+            [cdkDropListData]="inactiveList"
+            class="dropped-list"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListEnterPredicate]="noReturnPredicate">
+            <div id="drag-item-{{item}}" *ngFor="let item of inactiveList" cdkDrag cdkDragBoundary=".drag-boundary">
+                <p class="pspreview-text">{{item}} pressure system</p>
+                <img src="assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+            </div>
+          </div>
+        </div>
+
+        <div id="landing-list">
+          <div
+            cdkDropList
+            cdkDropListDisabled="{{draggingDisabled}}"
+            #northDropList="cdkDropList"
+            [cdkDropListData]="northDrop"
+            [cdkDropListConnectedTo]="[southDropList]"
+            class="dropped-list onmap north-drop"
+            (cdkDropListDropped)="drop($event)">
+            <div id="drag-item-{{item}}" *ngFor="let item of northDrop" cdkDrag cdkDragBoundary=".drag-boundary">
+                <img src="assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            cdkDropListDisabled="{{draggingDisabled}}"
+            #southDropList="cdkDropList"
+            [cdkDropListData]="southDrop"
+            [cdkDropListConnectedTo]="[northDropList]"
+            class="dropped-list onmap south-drop"
+            (cdkDropListDropped)="drop($event)">
+            <div id="drag-item-{{item}}" *ngFor="let item of southDrop" cdkDrag cdkDragBoundary=".drag-boundary">
+                <img src="assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+
+    <div class="{{stageOneContent}}">
+        <button id="go-button" class="se-button" mat-raised-button (click)="checkPressureSystems()">Go</button>
+    </div>
+
+
+
+    <div id="northern-temp-prompt" class="basebox ts-box {{northTempSelect}}">
+        Choose an air temperature in the north:
+        <div class="temp-button-wrap">
+                <button id="north-cold-button" class="ts-button" mat-raised-button (click)="selectNorthTemp('cold')">Colder</button>
+                <button id="north-warm-button" class="ts-button" mat-raised-button (click)="selectNorthTemp('warm')">Warmer</button>
+            <p>(than freezing)</p>
+        </div>
+
+    </div>
+
+    <div id="southern-temp-prompt" class="basebox ts-box {{southTempSelect}}">
+        Choose an air temperature in the south:
+        <div class="temp-button-wrap">
+                <button id="south-cold-button" class="ts-button" mat-raised-button (click)="selectSouthTemp('cold')">Colder</button>
+                <button id="south-warm-button" class="ts-button" mat-raised-button (click)="selectSouthTemp('warm')">Warmer</button>
+            <p>(than freezing)</p>
+        </div>
+
+    </div>
+
+    <div id="select-arrows" class="{{procceedVisibilityTwo}}">
+        <div id="choose-arrow-info" class="basebox">
+            Choose an arrow for the source of moisture, then press Go.
+        </div>
+        <button id="go-button-two" class="se-button" mat-raised-button (click)="checkTempMoisture()">Go</button>
+    </div>
+
+
+    <!-- Moisture Direction Overlays -->
+    <div id="moisture-arrows" class="{{procceedVisibilityTwo}}">
+        <button id="north-moist-button" class="{{northArrowState}}" (click)="selectMoistureDirection('north')"></button>
+        <button id="south-moist-button" class="{{southArrowState}}" (click)="selectMoistureDirection('south')"></button>
+    </div>
+
+    <!-- Snowstorm Animation and End Infobox -->
+    <app-video #snowAni class="{{visibilityThree}}"></app-video>
+    <div id="end-infobox" class="basebox paperboxed {{visibilityThree}}">
+        Nice job! You chose the right ingredients and made an upslope snow storm.<br><br>
+        In the northern hemisphere, upslope conditions develop when there's a low pressure system over southern portions of a mountain range and high
+        pressure system to the north. The winds rotate counterclockwise around the low, pushing relatively warm moist air up against the east slope
+        of the mountains. Air cools as it climbs higher, allowing moisture to condense into clouds and fall as rain or snow.
+        <br><br>
+        The cold high pressure system helps focus the winds from the east and keeps the cold air in place so snow can develop.
+    </div>
+
+    <!-- Snowflake Animation -->
+    <div id="snowflake-ani" class="{{visibilityThree}}">
+        <div id="sf-set1" class="{{sfa1}}">
+            *<br>
+            *<br>
+            *  *<br>
+            *<br>
+            *<br>
+            *<br>
+        </div>
+        <div id="sf-set2" class="{{sfa2}}">
+            *<br>
+            *<br>
+            * *<br>
+            *<br>
+        </div>
+        <div id="sf-set3" class="{{sfa3}}">
+            ** *<br>
+            *<br>
+            *<br>
+            * *<br>
+        </div>
+        <div id="sf-set4" class="{{sfa4}}">
+            *<br>
+            * *<br>
+            *<br>
+            *<br>
+        </div>
+        <div id="sf-set5" class="{{sfa5}}">
+            * *<br>
+            *<br>
+            *<br>
+
+        </div>
+    </div>
+
+</div>
+</div>
