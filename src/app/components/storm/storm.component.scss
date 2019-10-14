@@ -1,0 +1,30 @@
+.storm-main {
+  background-image: url("/sites/default/files/interactives/storm/assets/images/storm-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 1px black;
+  padding: 1vw;
+  height: 94vh;
+}
+
+.title {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 2.8vw;
+  text-shadow: 0.1vw 0.1vw black;
+  margin-top: 0.8vw;
+  margin-bottom: 0.8vw;
+}
+
+.instructions {
+  background: rgba(255, 255, 255, 0.5);
+  border: solid 2px white;
+  font-family: Roboto, sans-serif;
+  font-size: 1vw;
+  padding: 1vw;
+  margin-bottom: 1vw;
+}
+
+.instruction-text {
+  margin-bottom: 1vw;
+}

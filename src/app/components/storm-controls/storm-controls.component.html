@@ -1,0 +1,104 @@
+<form [formGroup]="stormForm">
+  <div class="storm-controls">
+    <div class="high-level-temperature">
+      High Level Temperature
+      <button
+        #highLevelTooltip="matTooltip"
+        (click)="highLevelTooltip.toggle()"
+        mat-icon-button
+        aria-label="help"
+        matTooltipPosition="right"
+        matTooltip="Chilly air up high allows water vapor to condense into water droplets, which make up the clouds of a thunderstorm.  The cooled air flows downward."
+      >
+        <mat-icon class="help-icon toggle-icon">help</mat-icon>
+      </button>
+    </div>
+    <div
+      class="high-level-temp-slider storm-control-slider"
+      fxLayoutAlign="center center"
+    >
+      <mat-slider
+        min="1"
+        max="3"
+        step="1"
+        value="2"
+        formControlName="highLevelTemperature"
+      ></mat-slider>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around">
+      <div>Very Cold</div>
+      <div>Cold</div>
+      <div>Cool</div>
+    </div>
+    <div class="humidity">
+      Humidity
+      <button
+        #humidityTooltip="matTooltip"
+        (click)="humidityTooltip.toggle()"
+        mat-icon-button
+        aria-label="help"
+        matTooltipPosition="right"
+        matTooltip="Moisture in the air is needed for clouds and rain.  When warm, humid air rises, the cumulus and, eventually, cumulonimbus clouds of a thunderstorm form."
+      >
+        <mat-icon class="help-icon toggle-icon">help</mat-icon>
+      </button>
+    </div>
+    <div
+      class="humidity-slider storm-control-slider"
+      fxLayoutAlign="center center"
+    >
+      <mat-slider
+        min="1"
+        max="3"
+        step="1"
+        value="2"
+        formControlName="humidity"
+      ></mat-slider>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around">
+      <div>High</div>
+      <div>Moderate</div>
+      <div>Low</div>
+    </div>
+    <div class="low-level-temperature">
+      Low Level Temperature
+      <button
+        #lowLevelTooltip="matTooltip"
+        (click)="lowLevelTooltip.toggle()"
+        mat-icon-button
+        aria-label="help"
+        matTooltipPosition="right"
+        matTooltip="Warm air near the ground allows water to evaporate into vapor, adding moisture to the storm.  Because warm air rises, so does the moisture."
+      >
+        <mat-icon class="help-icon toggle-icon">help</mat-icon>
+      </button>
+      <div
+        class="low-level-temp-slider storm-control-slider"
+        fxLayoutAlign="center center"
+      >
+        <mat-slider
+          min="1"
+          max="3"
+          step="1"
+          value="2"
+          formControlName="lowLevelTemperature"
+        ></mat-slider>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around">
+        <div>Cold</div>
+        <div>Cool</div>
+        <div>Warm</div>
+      </div>
+    </div>
+  </div>
+  <div class="storm-buttons">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <button mat-raised-button class="storm-button" (click)="resetStorm()">
+        Reset
+      </button>
+      <button mat-raised-button class="storm-button" (click)="checkStorm()">
+        Go
+      </button>
+    </div>
+  </div>
+</form>

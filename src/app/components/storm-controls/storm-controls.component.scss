@@ -1,0 +1,47 @@
+.storm-controls {
+  border: solid 2px white;
+  background: rgba(255, 255, 255, 0.5);
+  font-family: Roboto, sans-serif;
+  font-size: 1.2vw;
+  font-weight: bold;
+  padding: 0.5vw 1vw;
+  margin-bottom: 1vh;
+}
+
+.high-level-temperature,
+.humidity,
+.low-level-temperature {
+  margin-bottom: 0.3vh;
+}
+.low-level-temperature {
+  margin-top: 1vh;
+}
+
+.toggle-icon {
+  font-size: 2vw;
+}
+
+.storm-control-slider {
+  width: 18vw;
+  height: 8vh;
+  background-size: cover;
+  border: solid 1px white;
+}
+
+.high-level-temp-slider {
+  background-image: url("/sites/default/files/interactives/storm/assets/images/high_temp_scale.jpg");
+}
+
+.humidity-slider {
+  background-image: url("/sites/default/files/interactives/storm/assets/images/humidity_scale.jpg");
+}
+
+.low-level-temp-slider {
+  background-image: url("/sites/default/files/interactives/storm/assets/images/temp_scale.jpg");
+}
+
+.storm-button {
+  height: 8vh;
+  font-size: 4vh;
+  font-weight: bold;
+}

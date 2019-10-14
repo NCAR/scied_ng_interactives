@@ -1,0 +1,208 @@
+<div class="hurricane-main" fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign="space-between" fxFlexFill>
+    <div fxFlex="23%">
+      <h1 class="title">
+        FORECAST A HURRICANE
+      </h1>
+      <div fxLayout="column" fxLayoutAlign="start center">
+        <div
+          fxLayout="column"
+          fxLayoutAlign="space-between center"
+          class="select-hurricane"
+        >
+          <div>Select a hurricane:</div>
+          <form [formGroup]="hurricaneForm">
+            <mat-button-toggle-group
+              [vertical]="true"
+              formControlName="hurricane"
+            >
+              <mat-button-toggle (click)="setWinds('daniel')"
+                >Daniel</mat-button-toggle
+              >
+              <mat-button-toggle (click)="setWinds('elizabeth')"
+                >Elizabeth</mat-button-toggle
+              >
+              <mat-button-toggle (click)="setWinds('marianne')"
+                >Marianne</mat-button-toggle
+              >
+              <mat-button-toggle (click)="setWinds('stephen')"
+                >Stephen</mat-button-toggle
+              >
+            </mat-button-toggle-group>
+          </form>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayoutAlign="space-between center"
+          class="select-area"
+        >
+          <div>Then, select the area you think the hurricane will hit:</div>
+          <form [formGroup]="cityForm">
+            <mat-radio-group
+              formControlName="city"
+              aria-label="Then, select the area you think the hurricane will hit"
+            >
+              <mat-radio-button [value]="1">Atlantic City</mat-radio-button>
+              <mat-radio-button [value]="2">Tampa</mat-radio-button>
+              <mat-radio-button [value]="3">New Orleans</mat-radio-button>
+              <mat-radio-button [value]="4"
+                >No landfall
+                <button
+                  #cityToolTip="matTooltip"
+                  (click)="cityToolTip.toggle()"
+                  class="toggle-icon"
+                  mat-icon-button
+                  aria-label="help"
+                  matTooltipPosition="right"
+                  matTooltip="The hurricanes in this game are hypothetical storms that follow predictable paths given the locations of high and low pressure.  For more information about the historic paths of actual hurricanes in the Atlantic, check out the website of the National Hurricane Center."
+                >
+                  <mat-icon class="help-icon">help</mat-icon>
+                </button>
+              </mat-radio-button>
+            </mat-radio-group>
+          </form>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          class="instructions"
+        >
+          <div>
+            And then press the "Go" button next to the hurricane.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="77%" class="hurricane-map">
+      <div
+        fxFlexFill
+        class="winds-overlay"
+        [ngStyle]="{
+          'background-image': windsImage,
+          opacity: showWinds ? windsOpacity : 0
+        }"
+      ></div>
+      <div *ngIf="showLow[1]" class="low first-low">L</div>
+      <div *ngIf="showLow[2]" class="low second-low">L</div>
+      <div *ngIf="showLow[3]" class="low third-low">L</div>
+      <div *ngIf="showLow[4]" class="low fourth-low">L</div>
+      <div *ngIf="showHigh[1]" class="high first-high">H</div>
+      <div *ngIf="showHigh[2]" class="high second-high">H</div>
+      <div *ngIf="showHigh[3]" class="high third-high">H</div>
+      <div *ngIf="showHigh[4]" class="high fourth-high">H</div>
+      <div class="city atlantic-city">
+        Atlantic City
+      </div>
+      <div class="atlantic-city-icon" (click)="selectCity(1)">
+        <mat-icon *ngIf="selectedCity !== 1" class="city-radio">lens</mat-icon>
+        <mat-icon *ngIf="selectedCity === 1" class="city-radio"
+          >check_circle</mat-icon
+        >
+      </div>
+      <div class="city tampa">
+        Tampa
+      </div>
+      <div class="tampa-icon" (click)="selectCity(2)">
+        <mat-icon *ngIf="selectedCity !== 2" class="city-radio">lens</mat-icon>
+        <mat-icon *ngIf="selectedCity === 2" class="city-radio"
+          >check_circle</mat-icon
+        >
+      </div>
+      <div class="city new-orleans">
+        New Orleans
+      </div>
+      <div class="new-orleans-icon" (click)="selectCity(3)">
+        <mat-icon *ngIf="selectedCity !== 3" class="city-radio">lens</mat-icon>
+        <mat-icon *ngIf="selectedCity === 3" class="city-radio"
+          >check_circle</mat-icon
+        >
+      </div>
+      <div class="city no-landfall">
+        No Landfill
+      </div>
+      <div class="no-landfall-icon" (click)="selectCity(4)">
+        <mat-icon *ngIf="selectedCity !== 4" class="city-radio">lens</mat-icon>
+        <mat-icon *ngIf="selectedCity === 4" class="city-radio"
+          >check_circle</mat-icon
+        >
+      </div>
+      <div class="atlantic-city-hurricane-hit">
+        <div *ngIf="hurricaneHit['stephen']" class="hurricane-hit">
+          This hurricane hit Atlantic City.
+        </div>
+      </div>
+      <div class="tampa-hurricane-hit">
+        <div *ngIf="hurricaneHit['elizabeth']" class="hurricane-hit">
+          This hurricane hit Tampa.
+        </div>
+      </div>
+      <div class="new-orleans-hurricane-hit">
+        <div *ngIf="hurricaneHit['daniel']" class="hurricane-hit">
+          This hurricane hit New Orleans.
+        </div>
+      </div>
+      <div class="no-landfall-hurricane-hit">
+        <div *ngIf="hurricaneHit['marianne']" class="hurricane-hit">
+          This hurricane did not make landfall.
+        </div>
+      </div>
+      <app-hurricane-path
+        [path]="path"
+        (pathComplete)="pathComplete()"
+      ></app-hurricane-path>
+      <div class="toggle-winds" *ngIf="showWindsToggle">
+        <button
+          mat-raised-button
+          (click)="toggleWinds()"
+          class="control-button"
+        >
+          {{ this.showWinds ? "hide" : "show" }} winds
+        </button>
+        <button
+          #windToggleTooltip="matTooltip"
+          (click)="windToggleTooltip.toggle()"
+          class="toggle-icon"
+          mat-icon-button
+          aria-label="help"
+          matTooltipPosition="right"
+          matTooltip="The map shows the upper-level wind pattern around
+                        the regions of high and low pressure that you selected.
+                        Notice how these winds (shown with arrows) steer the hurricane."
+        >
+          <mat-icon class="help-icon">help</mat-icon>
+        </button>
+      </div>
+      <div class="controls" fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxLayoutAlign="center">
+          <button mat-raised-button class="go-button" (click)="predict()">
+            Go
+          </button>
+        </div>
+        <div fxFlex="65%" fxLayout="column" fxLayoutAlign="space-around">
+          <div>
+            <button
+              class="control-button"
+              mat-raised-button
+              (click)="tryAgain()"
+            >
+              <mat-icon inline="true" aria-hidden="true">replay</mat-icon>
+              Try Again
+            </button>
+          </div>
+          <div>
+            <button
+              class="control-button"
+              mat-raised-button
+              [routerLink]="['/hurricane']"
+            >
+              <mat-icon inline="true" aria-hidden="true"
+                >arrow_right_alt</mat-icon
+              >
+              Make a path (part 1)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

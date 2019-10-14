@@ -1,0 +1,63 @@
+<div
+  class="storm-main"
+  [ngStyle]="{
+    'background-image': 'url(/sites/default/files/interactives/storm/assets/images/' + backgroundImage + ')'
+  }"
+>
+  <div fxLayout="row" fxLayoutAlign="start">
+    <div class="title">
+      <div>MAKE A THUNDERSTORM</div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <app-storm-controls
+      (checkValues)="checkValues($event)"
+      (reset)="resetStorm()"
+    ></app-storm-controls>
+    <div fxFlex="27%">
+      <div class="instructions">
+        <div class="instruction-text">
+          Can you adjust the atmosphere to make a thunderstorm?
+        </div>
+        <div class="instruction-text">
+          Thunderstorms can only happen under certain conditions.
+        </div>
+        <div>
+          What do temperature and humidity need to be like up high and near to
+          the ground to make a storm?
+        </div>
+      </div>
+      <div class="accordion">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                What happens when temperature near the ground is different from
+                temperature up high?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              As warm surface air rises, it cools, which might make it sink
+              again. If the atmosphere is colder higher up, the air will
+              continue to rise. This motion, called convection, can lead to
+              cumulus clouds and thunderstorms.
+            </p>
+          </mat-expansion-panel>
+          <div>&nbsp;</div>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Why does humidity matter?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              To get a storm, surface air needs to be humid. When humid air
+              rises, it cools a little, forms clouds, but stays warmer than dry
+              air. Warmer air is more likely.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,234 @@
+<div class="hurricane-main" fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign="space-between" fxFlexFill>
+    <div fxFlex="23%">
+      <div class="title">
+        FORECAST A HURRICANE
+      </div>
+      <div class="instructions">
+        <div class="instructions-text">
+          The hurricane is in the Atlantic Ocean. Where will it go?
+        </div>
+        <div class="instructions-text">
+          Select an upper-level high (H) and low (L), then press Go.
+        </div>
+        <div class="instructions-text">
+          Select other high/low combinations and see how the paths differ.
+        </div>
+      </div>
+      <div class="accordion">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                What is a hurricane?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              A hurricane is an intense, rotationg low pressure system that
+              develops over tropical ocean regions, with maximum sustained winds
+              over 74 mph (33m/s). Hurricanes rotate around an "eye" (a calm
+              area with light winds and fair weather). When hurricanes come
+              onshore, the heavy rain, strong winds and large waves can cause
+              massive damage.
+            </p>
+          </mat-expansion-panel>
+          <div class="accordion-spacer">&nbsp;</div>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Why do hurricanes take different tracks?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              Hurricanes are steered by bands of upper level winds. But regions
+              of highs and lows in the upper atmosphere can turn them in other
+              directions.
+            </p>
+          </mat-expansion-panel>
+          <div class="accordion-spacer">&nbsp;</div>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                What's an upper-level low?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              This is a large area (about 1000 miles/1600 km wide) in which the
+              atmosphere is shallower than the surrounding area. A low is like a
+              valley of air in the atmosphere whereas a high is like a mountain
+              of air. The air move counterclockwise around the low in the
+              northern hemisphere and clockwise in the southern hemisphere.
+            </p>
+          </mat-expansion-panel>
+          <div class="accordion-spacer">&nbsp;</div>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                What's an upper-level high?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              This is a large area (about 1000 miles/1600 km wide) in which the
+              atmosphere is thicker than the surrounding area. A high is like a
+              mountain of air in the atmosphere whereas a low is like a valley
+              of air. The air move clockwise around a high in the northern
+              hemisphere and counterclockwise in the southern hemisphere.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div fxFlex="77%" class="hurricane-map">
+      <div
+        fxFlexFill
+        class="winds-overlay"
+        [ngStyle]="{
+          'background-image': windsImage,
+          opacity: showWinds ? windsOpacity : 0
+        }"
+      >
+        &nbsp;
+      </div>
+      <div>&nbsp;</div>
+      <div
+        class="low first-low"
+        [ngClass]="{ 'temp-disabled': disableLowTemp[1] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectLow(1)"
+      >
+        L
+      </div>
+      <div
+        class="low second-low"
+        [ngClass]="{ 'temp-disabled': disableLowTemp[2] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectLow(2)"
+      >
+        L
+      </div>
+      <div
+        class="low third-low"
+        [ngClass]="{ 'temp-disabled': disableLowTemp[3] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectLow(3)"
+      >
+        L
+      </div>
+      <div
+        class="low fourth-low"
+        [ngClass]="{ 'temp-disabled': disableLowTemp[4] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectLow(4)"
+      >
+        L
+      </div>
+      <div
+        class="high first-high"
+        [ngClass]="{ 'temp-disabled': disableHighTemp[1] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectHigh(1)"
+      >
+        H
+      </div>
+      <div
+        class="high second-high"
+        [ngClass]="{ 'temp-disabled': disableHighTemp[2] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectHigh(2)"
+      >
+        H
+      </div>
+      <div
+        class="high third-high"
+        [ngClass]="{ 'temp-disabled': disableHighTemp[3] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectHigh(3)"
+      >
+        H
+      </div>
+      <div
+        class="high fourth-high"
+        [ngClass]="{ 'temp-disabled': disableHighTemp[4] }"
+        [ngStyle]="{
+          cursor: disableTemperatureSelection ? 'default' : 'pointer'
+        }"
+        (click)="selectHigh(4)"
+      >
+        H
+      </div>
+      <!--
+      -->
+      <app-hurricane-path
+        [path]="path"
+        (pathComplete)="pathComplete()"
+      ></app-hurricane-path>
+      <div class="controls" fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxLayoutAlign="center">
+          <button mat-raised-button class="go-button" (click)="forecast()">
+            Go
+          </button>
+        </div>
+        <div fxFlex="65%" fxLayout="column" fxLayoutAlign="space-around">
+          <div>
+            <button
+              class="control-button"
+              mat-raised-button
+              (click)="tryAgain()"
+            >
+              <mat-icon inline="true" aria-hidden="true">replay</mat-icon>
+              Try Again
+            </button>
+          </div>
+          <div>
+            <button
+              class="control-button"
+              mat-raised-button
+              [routerLink]="['/predict']"
+            >
+              <mat-icon inline="true" aria-hidden="true"
+                >arrow_right_alt</mat-icon
+              >
+              Predict a path (part 2)
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="toggle-winds" *ngIf="showWindsToggle">
+        <button
+          mat-raised-button
+          (click)="toggleWinds()"
+          class="control-button"
+        >
+          {{ this.showWinds ? "hide" : "show" }} winds
+        </button>
+        <button
+          #windToggleTooltip="matTooltip"
+          (click)="windToggleTooltip.toggle()"
+          class="toggle-icon"
+          mat-icon-button
+          aria-label="help"
+          matTooltipPosition="right"
+          matTooltip="The map shows the upper-level wind pattern around
+                        the regions of high and low pressure that you selected.
+                        Notice how these winds (shown with arrows) steer the hurricane."
+        >
+          <mat-icon class="help-icon">help</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

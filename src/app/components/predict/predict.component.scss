@@ -1,0 +1,257 @@
+.hurricane-main {
+  background-image: url(/assets/images/hurricane-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1vw;
+  font-family: Roboto, sans-serif;
+  height: 98vh;
+}
+
+.title {
+  color: white;
+  margin-top: -12px;
+  font-size: 2.8vw;
+  font-weight: bold;
+}
+
+.low {
+  position: absolute;
+  color: red;
+  font-size: 8vw;
+  text-shadow: 3px 3px black;
+}
+
+.high {
+  position: absolute;
+  color: blue;
+  font-size: 8vw;
+  text-shadow: 3px 3px black;
+}
+
+.first-low {
+  left: 14%;
+  top: 11%;
+}
+.second-low {
+  left: 34%;
+  top: 11%;
+}
+.third-low {
+  left: 13%;
+  top: 33%;
+}
+.fourth-low {
+  left: 33%;
+  top: 33%;
+}
+.first-high {
+  left: 53%;
+  top: 18%;
+}
+.second-high {
+  left: 67%;
+  top: 18%;
+}
+.third-high {
+  left: 51%;
+  top: 40%;
+}
+.fourth-high {
+  left: 65%;
+  top: 40%;
+}
+
+.select-hurricane {
+  background-color: #e0e7ec;
+  font-weight: bold;
+  width: 66%;
+  padding: 0.5vw;
+  font-size: 1.2vw;
+  margin-bottom: 1vh;
+  form {
+    width: 10vw;
+    mat-button-toggle-group {
+      width: 100%;
+    }
+  }
+}
+
+.select-area {
+  background-color: #e0e7ec;
+  font-weight: bold;
+  width: 66%;
+  padding: 1vw;
+  font-size: 1.2vw;
+  margin-bottom: 1vh;
+}
+
+.instructions {
+  background-color: #e0e7ec;
+  font-weight: bold;
+  width: 66%;
+  font-size: 1.2vw;
+  padding: 0.5vw;
+}
+
+.hurricane-map {
+  background-image: url(/assets/images/hurricane-map.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.winds-overlay {
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: inherit;
+}
+
+.toggle-winds {
+  position: absolute;
+  top: 92%;
+  left: 2%;
+  font-size: 1vw;
+  .toggle-icon {
+    color: white;
+  }
+  .control-button {
+    padding-top: 0.1vw;
+    padding-bottom: 0.1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    min-width: 0;
+    line-height: 2vw;
+  }
+}
+
+.controls {
+  top: 85%;
+  left: 65%;
+  width: 34%;
+  height: 14%;
+  position: absolute;
+  opacity: 0.9;
+  background-color: #d8e1f0;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  .go-button {
+    font-size: 3vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    min-width: 0;
+    line-height: 4vw;
+  }
+  .control-button {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    min-width: 0;
+    line-height: 1vw;
+  }
+}
+
+mat-radio-button .mat-radio-label-content {
+  white-space: normal;
+}
+
+mat-radio-button .mat-radio-label {
+  align-items: normal;
+}
+
+.city {
+  position: relative;
+  font-size: 1vw;
+  color: white;
+  text-shadow: 2px 2px black;
+  font-weight: bold;
+  width: 10vw;
+}
+
+.city-radio {
+  color: black;
+  text-shadow: none;
+  font-size: 2.2vw;
+}
+
+.hurricane-hit {
+  background-color: #e0e7ec;
+  font-weight: bold;
+  color: black;
+  text-shadow: none;
+  padding: 0.5vw;
+  width: 9vw;
+}
+
+.new-orleans {
+  top: -72%;
+  left: 23%;
+}
+.new-orleans-icon {
+  position: relative;
+  width: 10vw;
+  top: -79.4%;
+  left: 29%;
+}
+.new-orleans-hurricane-hit {
+  position: relative;
+  top: -100%;
+  left: 9%;
+  z-index: 100;
+}
+
+.tampa {
+  top: -63%;
+  left: 33%;
+}
+.tampa-icon {
+  width: 10vw;
+  position: relative;
+  top: -68%;
+  left: 37%;
+}
+.tampa-hurricane-hit {
+  position: relative;
+  top: -101%;
+  left: 23%;
+  z-index: 100;
+}
+
+.atlantic-city {
+  top: -82%;
+  left: 53%;
+}
+.atlantic-city-icon {
+  width: 10vw;
+  position: relative;
+  top: -86%;
+  left: 49.5%;
+}
+.atlantic-city-hurricane-hit {
+  position: relative;
+  top: -124%;
+  left: 36%;
+  z-index: 100;
+}
+
+.no-landfall {
+  top: -108%;
+  left: 88%;
+}
+.no-landfall-icon {
+  width: 10vw;
+  position: relative;
+  top: -112%;
+  left: 84.5%;
+}
+.no-landfall-hurricane-hit {
+  position: relative;
+  top: -127%;
+  left: 69%;
+  z-index: 100;
+}
