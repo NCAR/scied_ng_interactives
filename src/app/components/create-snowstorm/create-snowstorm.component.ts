@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -7,19 +7,12 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ['./create-snowstorm.component.scss']
 })
 export class CreateSnowstormComponent implements OnInit {
-  title: string = "Create a SNOWSTORM";
+  title = "Create a SNOWSTORM";
 
-  constructor(private renderer: Renderer2) {
-    this.setBackground();
+  constructor() {
 
-  }
-  setBackground() {
-    this.renderer.addClass(document.body, 'videos');
   }
 
   ngOnInit() {
-  }
-  ngOnDestroy() {
-    this.renderer.removeClass(document.body, 'videos');
   }
 }

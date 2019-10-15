@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { ReloadService } from '../reload.service';
@@ -13,6 +13,7 @@ import { delay } from 'q';
 
 export class MapContainerComponent implements OnInit {
 
+  @Output() reload = new EventEmitter();
     subscription: any;
     //Drag and Drop Killswitch
   draggingDisabled: boolean = false;
@@ -92,6 +93,11 @@ export class MapContainerComponent implements OnInit {
     this.snackBar.open(this.messageArray[messageId], "x", {duration: 10000});
   }
 
+  resetApp() {
+//this.webapp.goToPage('/apps/create-snowstorm');
+
+    this.reloadService.emitReloadEvent(true);
+  }
   drop(event: CdkDragDrop<string[]>)
   {
     if (event.previousContainer === event.container) {

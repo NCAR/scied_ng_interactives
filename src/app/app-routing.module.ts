@@ -24,10 +24,10 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: StormComponent
+    component: CreateSnowstormComponent
   },
   { path: '**',
-    component: StormComponent
+    component: CreateSnowstormComponent
   }
 ];
 

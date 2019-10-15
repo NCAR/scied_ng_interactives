@@ -1,9 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+	background-color: #c5daf4;
+	background-image: url(/sites/default/files/interactives/snow/assets/apps/create-snowstorm/background.jpg);
+	background-size: cover; /*1920px 990px;*/
+	background-position: top center;
+	background-repeat: no-repeat
+	float: none;
+	margin: 0px auto;
+}
+
+
+
 html,
 body {
   height: 100vh;
+  /*max-height:1920px;*/
+  max-height: 865px;
 }
 
 app-storm,

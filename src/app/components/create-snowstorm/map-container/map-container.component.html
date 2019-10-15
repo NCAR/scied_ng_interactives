@@ -1,14 +1,14 @@
 <div id="map-stage-wrap" class="drag-boundary">
 <div class="map-bkg-container">
     <!-- MAP BACKGROUNDS -->
-    <img id="map-01" src="assets/apps/create-snowstorm/map-01.jpg" class="map-bkg {{mb1}}" alt="base US map">
-    <img id="map-02" src="assets/apps/create-snowstorm/map-02.jpg" class="map-bkg {{mb2}}" alt="base US map with divider lines">
+    <img id="map-01" src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/map-01.jpg" class="map-bkg {{mb1}}" alt="base US map">
+    <img id="map-02" src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/map-02.jpg" class="map-bkg {{mb2}}" alt="base US map with divider lines">
 
     <!-- MAP OVERLAYS -->
-    <img id="map-overlay-01" src="assets/apps/create-snowstorm/map-overlay-01.png" class="map-bkg {{mo1}}" alt="northern region cold temperature selection">
-    <img id="map-overlay-02" src="assets/apps/create-snowstorm/map-overlay-02.png" class="map-bkg {{mo2}}" alt="northern region warm temperature selection">
-    <img id="map-overlay-03" src="assets/apps/create-snowstorm/map-overlay-03.png" class="map-bkg {{mo3}}" alt="southern region cold temperature selection">
-    <img id="map-overlay-04" src="assets/apps/create-snowstorm/map-overlay-04.png" class="map-bkg {{mo4}}" alt="southern region warm temperature selection">
+    <img id="map-overlay-01" src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/map-overlay-01.png" class="map-bkg {{mo1}}" alt="northern region cold temperature selection">
+    <img id="map-overlay-02" src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/map-overlay-02.png" class="map-bkg {{mo2}}" alt="northern region warm temperature selection">
+    <img id="map-overlay-03" src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/map-overlay-03.png" class="map-bkg {{mo3}}" alt="southern region cold temperature selection">
+    <img id="map-overlay-04" src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/map-overlay-04.png" class="map-bkg {{mo4}}" alt="southern region warm temperature selection">
 </div>
 <div class="overlays-container">
     <!-- PROCEED DYNAMIC BOX-->
@@ -45,7 +45,7 @@
             [cdkDropListEnterPredicate]="noReturnPredicate">
             <div id="drag-item-{{item}}" *ngFor="let item of inactiveList" cdkDrag cdkDragBoundary=".drag-boundary">
                 <p class="pspreview-text">{{item}} pressure system</p>
-                <img src="assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
             class="dropped-list onmap north-drop"
             (cdkDropListDropped)="drop($event)">
             <div id="drag-item-{{item}}" *ngFor="let item of northDrop" cdkDrag cdkDragBoundary=".drag-boundary">
-                <img src="assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
             </div>
           </div>
 
@@ -73,7 +73,7 @@
             class="dropped-list onmap south-drop"
             (cdkDropListDropped)="drop($event)">
             <div id="drag-item-{{item}}" *ngFor="let item of southDrop" cdkDrag cdkDragBoundary=".drag-boundary">
-                <img src="assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
             </div>
           </div>
 
@@ -170,3 +170,5 @@
 
 </div>
 </div>
+
+  		  <button id="reset-button" class="se-button" mat-raised-button (click)="resetApp()">Reset</button>

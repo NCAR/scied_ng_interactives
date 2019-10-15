@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
+import { Router } from '@angular/router';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -15,7 +16,14 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatRadioModule } from "@angular/material/radio";
 
+import { MatDialogModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DroppableDirective } from './components/create-snowstorm/droppable.directive';
+import { DraggableDirective } from './components/create-snowstorm/draggable.directive';
+import { DragService } from './components/create-snowstorm/drag.service';
+import { ReloadService } from './components/create-snowstorm/reload.service';
 
 import { LayoutModule } from "@angular/cdk/layout";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -32,6 +40,14 @@ import { VideoComponent } from './components/create-snowstorm/video/video.compon
 import * as fromServices from "./services";
 import { PredictComponent } from "./components/predict/predict.component";
 
+
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +56,8 @@ import { PredictComponent } from "./components/predict/predict.component";
     HurricaneComponent,
     HurricanePathComponent,
     CreateSnowstormComponent,
+    DroppableDirective,
+    DraggableDirective,
     PredictComponent,
     MapContainerComponent,
     SidebarComponent,
@@ -61,9 +79,15 @@ import { PredictComponent } from "./components/predict/predict.component";
     DragDropModule,
     MatButtonToggleModule,
     MatRadioModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
+    MatFormFieldModule
   ],
-  providers: [...fromServices.services],
+  providers: [
+  DragService,
+  ReloadService,
+  ...fromServices.services
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

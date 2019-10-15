@@ -1,28 +1,5 @@
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
-
-//Title
-#maintitle {
-	font-weight: bold;
-	font-size: 50px;
-	line-height: 1em;
-	color: white;
-	text-shadow: 2px 1px 2px rgba(30,30,35,0.8);
-	text-align: left;
-}
 
 
-//Base backgrounds
-.snow-bkg {
-	background-color: #c5daf4;
-	background-image: url(/sites/default/files/interactives/snow/assets/apps/create-snowstorm/background.jpg);
-	background-size: cover; /*1920px 990px;*/
-	background-position: top center;
-	background-repeat: no-repeat;
-	float: none;
-	margin: 0px auto;
-	max-width: 1920px;
-	max-height: 990px;
-}
 
 //Sidebar components
 .basebox {
@@ -36,11 +13,7 @@
 	line-height: 1.1em;
 	padding: 10px;
 }
-#infobox {
-	max-width: 400px;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
+
 .spaced-text {
 	margin-bottom: 60px;
 }
@@ -57,16 +30,6 @@
 	top: -8px;
 }
 
-#primary-sidebar {
-	max-width: 450px;
-}
-#accordion-container {
-	max-width: 400px;
-}
-#interactive-stage {
-	margin-top: 30px;
-	padding-left:0 !important;
-}
 #map-stage-wrap {
 	position: relative;
 }
@@ -114,6 +77,10 @@
 	bottom: 40px;
 	left: 330px;
 	font-size: 40px;
+}
+#reset-button {
+	font-size: 40px;
+	display:none;
 }
 
 #go-button-two {
@@ -239,7 +206,7 @@
 }
 
 #north-moist-button {
-	background-image: url('/exhibits/prediction/assets/apps/create-snowstorm/arrow-top-d.png');
+	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-d.png');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	width: 260px;
@@ -254,11 +221,11 @@
 }
 #north-moist-button:hover,
 #north-moist-button:active {
-	background-image: url('/exhibits/prediction/assets/apps/create-snowstorm/arrow-top-s.png');
+	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-s.png');
 	opacity: 0.9;
 }
 #south-moist-button {
-	background-image: url('/exhibits/prediction/assets/apps/create-snowstorm/arrow-bottom-d.png');
+	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-d.png');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	width: 260px;
@@ -285,31 +252,6 @@
 #south-moist-button.active {
 	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-s.png');
 }
-
-#snowstorm-ani {
-	position: absolute;
-	margin-top: 50px;
-	margin-left: 50px;
-	z-index: 1;
-}
-#snowstorm-ani::before {
-	display		  : block;
-	width         : 0;
-	height        : 0;
-	transform     : rotate(33deg);
-	border-left   : 25px solid transparent;
-	border-right  : 250px solid transparent;
-	/*border-bottom : 100px solid #848484;*/
-	border-bottom-width: 100px;
-	border-bottom-style: solid;
-	border-bottom-color: #8f8e90;
-	position: absolute;
-	left: 420px;
-	top: 270px;
-	content: '';
-	z-index: -1;
-}
-
 #snowflake-ani {
 	position: absolute;
 	width: 100px;
@@ -475,3 +417,17 @@
     left: 18px;
     top: 78px;
   }
+
+	@media only screen and (max-width: 865px) {
+		#reset-button {
+			display:inline;
+		}
+
+		#northern-temp-prompt {
+			right: 200px;
+		}
+		#southern-temp-prompt {
+			right: 200px;
+		}
+
+	}
