@@ -5,23 +5,26 @@
     display: none;
 }
 
+// for snow apps
 body {
 	background-color: #c5daf4;
 	background-image: url(/sites/default/files/interactives/snow/assets/apps/create-snowstorm/background.jpg);
-	background-size: cover; /*1920px 990px;*/
-	background-position: top center;
-	background-repeat: no-repeat
-	float: none;
-	margin: 0px auto;
+  width:1920px;
+}
+
+@media only screen and (max-width: 865px) {
+  body {
+    width:865px;
+  }
 }
 
 
 
+
+/* for hurricane and thunderstorm
 html,
 body {
   height: 100vh;
-  /*max-height:1920px;*/
-  max-height: 865px;
 }
 
 app-storm,
@@ -87,3 +90,4 @@ app-storm-controls {
     width: 90%;
   }
 }
+*/

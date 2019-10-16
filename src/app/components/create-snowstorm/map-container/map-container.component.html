@@ -45,7 +45,7 @@
             [cdkDropListEnterPredicate]="noReturnPredicate">
             <div id="drag-item-{{item}}" *ngFor="let item of inactiveList" cdkDrag cdkDragBoundary=".drag-boundary">
                 <p class="pspreview-text">{{item}} pressure system</p>
-                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon" class="system">
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
             class="dropped-list onmap north-drop"
             (cdkDropListDropped)="drop($event)">
             <div id="drag-item-{{item}}" *ngFor="let item of northDrop" cdkDrag cdkDragBoundary=".drag-boundary">
-                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon" class="system">
             </div>
           </div>
 
@@ -73,7 +73,7 @@
             class="dropped-list onmap south-drop"
             (cdkDropListDropped)="drop($event)">
             <div id="drag-item-{{item}}" *ngFor="let item of southDrop" cdkDrag cdkDragBoundary=".drag-boundary">
-                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon">
+                <img src="/sites/default/files/interactives/snow/assets/apps/create-snowstorm/{{item}}_pressure.png" alt="{{item}} pressure icon" class="system">
             </div>
           </div>
 
@@ -170,5 +170,3 @@
 
 </div>
 </div>
-
-  		  <button id="reset-button" class="se-button" mat-raised-button (click)="resetApp()">Reset</button>

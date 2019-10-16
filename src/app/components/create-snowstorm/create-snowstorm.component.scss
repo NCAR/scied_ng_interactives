@@ -1,26 +1,5 @@
-.container-fluid {
-
-}
-
-#primary-sidebar {
-	float:left;
-	width:20%;
-	max-width:450px;
-
-}
-
-#interactive-stage {
-	width:80%;
-	padding-left:0 !important;
-	float:left;
-}
-
-@media only screen and (max-width: 865px) {
-	#primary-sidebar {
-		display:none;
-	}
-
-	#interactive-stage {
-		width: 100%;
+.snow-container {
+	.snow-flex {
+			display: flex;
 	}
 }

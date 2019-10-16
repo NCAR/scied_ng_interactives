@@ -93,11 +93,6 @@ export class MapContainerComponent implements OnInit {
     this.snackBar.open(this.messageArray[messageId], "x", {duration: 10000});
   }
 
-  resetApp() {
-//this.webapp.goToPage('/apps/create-snowstorm');
-
-    this.reloadService.emitReloadEvent(true);
-  }
   drop(event: CdkDragDrop<string[]>)
   {
     if (event.previousContainer === event.container) {

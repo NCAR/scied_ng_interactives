@@ -1,6 +1,3 @@
-
-
-
 //Sidebar components
 .basebox {
 	border: 1px solid white;
@@ -32,14 +29,20 @@
 
 #map-stage-wrap {
 	position: relative;
+	width: 1460px;
 }
+
 .map-bkg-container {
 	position: relative;
+	width: 100%;
 }
+
 .map-bkg {
 	display: none;
 	position: absolute;
+	width: 1460px;
 }
+
 .map-bkg.active {
 	display: block;
 }
@@ -78,10 +81,6 @@
 	left: 330px;
 	font-size: 40px;
 }
-#reset-button {
-	font-size: 40px;
-	display:none;
-}
 
 #go-button-two {
 	position: absolute;
@@ -89,7 +88,6 @@
 	top: 510px;
 	font-size: 40px;
 }
-
 
 #drag-item-high,
 #drag-item-low {
@@ -129,6 +127,7 @@
 	width: 340px;
 	height: 200px;
 }
+
 .ts-button {
 	height: 80px;
 	width: 120px;
@@ -137,14 +136,17 @@
 	text-shadow: 1px 1px 2px rgba(30,30,35,0.2);
 	margin: 10px !important;
 }
+
 .temp-button-wrap {
 	text-align: center;
 }
+
 #northern-temp-prompt {
 	position: absolute;
 	right: 40px;
 	top: 40px;
 }
+
 #southern-temp-prompt {
 	position: absolute;
 	right: 40px;
@@ -155,12 +157,11 @@
 #south-cold-button {
 	background-color: #2757ee;
 }
+
 #north-warm-button,
 #south-warm-button {
 	background-color: #e02e2e;
 }
-
-
 /* DRAG/DROP */
 #launch-list {
 	width: 100px;
@@ -169,6 +170,7 @@
 	left: 320px;
 	bottom: 120px;
 }
+
 #landing-list {
 	width: 100px;
 	height: 300px;
@@ -206,7 +208,7 @@
 }
 
 #north-moist-button {
-	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-d.png');
+	background-image: url("/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-d.png");
 	background-repeat: no-repeat;
 	background-color: transparent;
 	width: 260px;
@@ -219,13 +221,15 @@
 	opacity: 0.85;
 	z-index: 9999;
 }
-#north-moist-button:hover,
-#north-moist-button:active {
-	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-s.png');
+
+#north-moist-button:active,
+#north-moist-button:hover {
+	background-image: url("/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-s.png");
 	opacity: 0.9;
 }
+
 #south-moist-button {
-	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-d.png');
+	background-image: url("/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-d.png");
 	background-repeat: no-repeat;
 	background-color: transparent;
 	width: 260px;
@@ -238,20 +242,25 @@
 	opacity: 0.85;
 	z-index: 9999;
 }
-#south-moist-button:hover,
-#south-moist-button:active {
-	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-s.png');
+
+#south-moist-button:active,
+#south-moist-button:hover {
+	background-image: url("/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-s.png");
 }
+
 #north-moist-button.deactivated,
 #south-moist-button.deactivated {
 	opacity: 0.3;
 }
+
 #north-moist-button.active {
-	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-s.png');
+	background-image: url("/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-top-s.png");
 }
+
 #south-moist-button.active {
-	background-image: url('/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-s.png');
+	background-image: url("/sites/default/files/interactives/snow/assets/apps/create-snowstorm/arrow-bottom-s.png");
 }
+
 #snowflake-ani {
 	position: absolute;
 	width: 100px;
@@ -271,16 +280,17 @@
 	height: 440px;
 	font-size: 18px;
 	line-height: 1.3em;
-	border: 4px solid #bbb
+	border: 4px solid #bbb;
 }
 
 .mat-snack-bar-container {
 	background-color: #ddd;
 	line-height: 22px;
 }
+
 .mat-simple-snackbar {
 	font-size: 22px;
-	color: #333
+	color: #333;
 }
 
 .mat-button {
@@ -291,143 +301,307 @@
 	display: none;
 }
 
-
-
 .example-container {
-    width: 400px;
-    max-width: 100%;
-    margin: 0 25px 25px 0;
-    display: inline-block;
-    vertical-align: top;
-  }
+	width: 400px;
+	max-width: 100%;
+	margin: 0 25px 25px 0;
+	display: inline-block;
+	vertical-align: top;
+}
 
-  .dropped-list {
-    min-height: 100px;
-    width: 100px;
-    overflow: hidden;
-    display: block;
-  }
+.dropped-list {
+	min-height: 100px;
+	width: 100px;
+	overflow: hidden;
+	display: block;
+}
 
-  .dropped-list.onmap {
-      height: 100px;
-  }
+.dropped-list.onmap {
+	height: 100px;
+}
 
-  .example-box {
-    color: rgba(0, 0, 0, 0.87);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    cursor: move;
-    font-size: 14px;
-  }
+.example-box {
+	color: rgba(0, 0, 0, 0.87);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	cursor: move;
+	font-size: 14px;
+}
 
-  .cdk-drag-preview {
-    box-sizing: border-box;
-    border-radius: 50%;
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  }
+.cdk-drag-preview {
+	box-sizing: border-box;
+	border-radius: 50%;
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
 
-  .cdk-drag-placeholder {
-    opacity: 0;
-  }
+.cdk-drag-placeholder {
+	opacity: 0;
+}
 
-  .cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
+.cdk-drag-animating {
+	transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
 
-  .example-box:last-child {
-    border: none;
-  }
+.example-box:last-child {
+	border: none;
+}
 
-  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+	transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
 
-  .north-drop.cdk-drop-list-dragging,
-  .south-drop.cdk-drop-list-dragging {
-      background-color: rgba(117, 111, 202, 0.5);
-      border-radius: 50%;
-  }
+.north-drop.cdk-drop-list-dragging,
+.south-drop.cdk-drop-list-dragging {
+	background-color: rgba(117, 111, 202, 0.5);
+	border-radius: 50%;
+}
 
-  #sf-set1,
-  #sf-set2,
-  #sf-set3,
-  #sf-set4,
-  #sf-set5 {
-    position: absolute;
-    transition: 1s all ease-out;
-  }
+#sf-set1,
+#sf-set2,
+#sf-set3,
+#sf-set4,
+#sf-set5 {
+	position: absolute;
+	transition: 1s all ease-out;
+}
 /* start position */
-  #sf-set1 {
-    left: 80px;
-    top: 2px;
-    transition-delay: 0.3s;
-  }
+#sf-set1 {
+	left: 80px;
+	top: 2px;
+	transition-delay: 0.3s;
+}
 
-  #sf-set2 {
-    left: 67px;
-    top: 27px;
-    transition-delay: 0.1s;
-  }
+#sf-set2 {
+	left: 67px;
+	top: 27px;
+	transition-delay: 0.1s;
+}
 
-  #sf-set3 {
-    left: 73px;
-    top: 14px;
-    transition-delay: 0.3s;
-  }
+#sf-set3 {
+	left: 73px;
+	top: 14px;
+	transition-delay: 0.3s;
+}
 
-  #sf-set4 {
-    left: 57px;
-    top: 4px;
-    transition-delay: 0.25s;
-  }
+#sf-set4 {
+	left: 57px;
+	top: 4px;
+	transition-delay: 0.25s;
+}
 
-  #sf-set5 {
-    left: 81px;
-    top: 78px;
-    transition-delay: 0.3s;
-  }
-
+#sf-set5 {
+	left: 81px;
+	top: 78px;
+	transition-delay: 0.3s;
+}
 /* end position*/
-  #sf-set1.ani {
-    left: 0px;
-    top: 2px;
-  }
+#sf-set1.ani {
+	left: 0;
+	top: 2px;
+}
 
-  #sf-set2.ani {
-    left: 14px;
-    top: 27px;
-  }
+#sf-set2.ani {
+	left: 14px;
+	top: 27px;
+}
 
-  #sf-set3.ani {
-    left: 2px;
-    top: 14px;
-  }
+#sf-set3.ani {
+	left: 2px;
+	top: 14px;
+}
 
-  #sf-set4.ani {
-    left: 12px;
-    top: 4px;
-  }
+#sf-set4.ani {
+	left: 12px;
+	top: 4px;
+}
 
-  #sf-set5.ani {
-    left: 18px;
-    top: 78px;
-  }
+#sf-set5.ani {
+	left: 18px;
+	top: 78px;
+}
+@media only screen and (max-width: 865px) {
+	#map-stage-wrap {
+		width: 695px;
+		height: 490px;
+	}
+	.overlays-container {
+		width: 695px;
+		height: 490px;
+	}
 
-	@media only screen and (max-width: 865px) {
-		#reset-button {
-			display:inline;
-		}
+	.map-bkg {
+		width: 695px;
+	}
 
-		#northern-temp-prompt {
-			right: 200px;
-		}
-		#southern-temp-prompt {
-			right: 200px;
-		}
+	#landing-pad-south,
+	.south-drop {
+		margin-top: 10px;
+	}
+
+	#content-info {
+		position: absolute;
+		left: 50px;
+		bottom:60px;
+		width: 250px;
+		height: 150px;
+		padding: 5px;
+		font-size: .8em;
+		background-color: rgba(255,255,255,0.85);
+	}
+
+	.spaced-text {
+		margin-bottom: 30px;
+	}
+	img.system {
+		width: 50px;
+		height: 50px;
 
 	}
+	#drag-item-high,
+	#drag-item-low {
+		height: 50px;
+		width: 50px;
+
+		img {
+			width: 50px;
+			height: 50px;
+		}
+	}
+
+	.dropped-list {
+		height: 50px;
+		width: 50px;
+	}
+
+	.dropped-list.onmap {
+		height: 50px;
+		min-height: 50px;
+	}
+
+	.pspreview-text {
+		left: -150px;
+		top: 0px;
+		width: 150px;
+		height: 40px;
+		font-size: 1em;
+		img {
+			width:50px;
+			height:50px;
+		}
+	}
+
+	#launch-list {
+		height: 130px;
+		left: 185px;
+		bottom: 30px;
+	}
+
+	#landing-list {
+		left: 356px;
+		top: 200px;
+		height: 120px;
+		width: 50px;
+	}
+
+	#landing-pads {
+		left: 356px;
+		top: 200px;
+
+		#landing-pad-north,
+		#landing-pad-south {
+			width: 50px;
+			height: 50px;
+		}
+	}
+	#go-button {
+		bottom: 60px;
+		left: 240px;
+		font-size: 1.2em;
+	}
+	.se-button{
+		padding:2px !important;
+		text-align:center;
+	}
+	#proceed-box {
+		width: 250px;
+		height: 125px;
+		top: 30px;
+		padding: 5px;
+		font-size:1em;
+	}
+	#next-button {
+		font-size: 1em;
+	}
+	#northern-temp-prompt,
+	#southern-temp-prompt {
+		font-size: 1em;
+		right:0px;
+		p {
+			margin:0;
+		}
+	}
+
+	#northern-temp-prompt {
+		top:0px;
+	}
+	.ts-box {
+		width: 200px;
+		height:120px;
+	}
+	#north-cold-button,
+	#south-cold-button,
+	#north-warm-button,
+	#south-warm-button
+	{
+		font-size: 0.7em;
+		height: 40px;
+		width: 80px;
+	}
+	.basebox {
+		background-color: rgba(255,255,255,0.85);
+	}
+	#south-moist-button {
+		width: 60px;
+    height: 90px;
+    top: 275px;
+    left: 345px;
+		background-size:60px 90px;
+	}
+	#north-moist-button {
+		width: 60px;
+    height: 90px;
+    top: 135px;
+    left: 325px;
+		background-size:60px 90px;
+	}
+	#choose-arrow-info {
+		left: 420px;
+		top: 210px;
+		width: 250px;
+		font-size:1em;
+		height:50px;
+	}
+	#go-button-two {
+		left: 610px;
+		top: 240px;
+		font-size: 1em;
+	}
+	#end-infobox {
+		left: 10px;
+		bottom: 60px;
+		width: 250px;
+		height: 200px;
+		font-size: 18px;
+		line-height: .9em;
+		font-size: .8em;
+		padding:10px;
+	}
+	#snowflake-ani {
+		left:320px;
+		top:170px;
+		font-size:10px;
+	}
+}

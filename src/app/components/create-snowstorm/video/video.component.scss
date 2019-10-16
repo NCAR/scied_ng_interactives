@@ -21,3 +21,19 @@
 	content: '';
 	z-index: -1;
 }
+
+@media only screen and (max-width: 865px) {
+	#snowstorm-ani {
+		margin-left: 10px;
+		margin-top:10px;
+	}
+	video {
+		width: 250px;
+	}
+	#snowstorm-ani::before {
+		left: 210px;
+		top: 160px;
+		border-bottom-width: 25px;
+		border-right  : 70px solid transparent;
+	}
+}
