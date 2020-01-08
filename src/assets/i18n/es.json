@@ -1,0 +1,44 @@
+{
+  "thunderstorm": {
+    "title" :"HAZ UNA TORMENTA",
+    "instructions": {
+      "line1":"Can you adjust the atmosphere to make a thunderstorm?",
+      "line2":"Thunderstorms can only happen under certain conditions.",
+      "line3":"What do temperature and humidity need to be like up high and near tothe ground to make a storm?"
+    },
+    "questions": {
+        "question1": "What happens when temperature near the ground is different from temperature up high?",
+        "answer1":"As warm surface air rises, it cools, which might make it sink again. If the atmosphere is colder higher up, the air will continue to rise. This motion, called convection, can lead to cumulus clouds and thunderstorms.",
+        "question2": "Why does humidity matter?",
+        "answer2":"To get a storm, surface air needs to be humid. When humid air rises, it cools a little, forms clouds, but stays warmer than dry air. Warmer air is more likely."
+    },
+    "feedback": {
+      "tryagain":"Try again.  Did you know that a thunderstorm needs warm, humid air near the ground and cooler air above?",
+      "small":"Great job!  You've made a small storm.  Do you know how to make it larger?",
+      "medium": "Great job!  You've made a medium sized storm.  Choose other combinations to make a larger or smaller thunderstorm.",
+      "large": "Congratulations!  You've made a big storm!  Choose other combinations to make smaller thunderstorms."
+    },
+    "controls":{
+      "highlvltemp":"High Level Temperature",
+      "highlvltemptoolbar":"Chilly air up high allows water vapor to condense into water droplets, which make up the clouds of a thunderstorm.  The cooled air flows downward.",
+      "humidity":"Humidity",
+      "humiditytoolbar":"Moisture in the air is needed for clouds and rain.  When warm, humid air rises, the cumulus and, eventually, cumulonimbus clouds of a thunderstorm form.",
+      "lowlvltemp":"Low Level Temperature",
+      "lowlvltemptoolbar":"Warm air near the ground allows water to evaporate into vapor, adding moisture to the storm.  Because warm air rises, so does the moisture.",
+      "verycold":"Very Cold",
+      "cold": "Cold",
+      "cool":"Cool",
+      "warm":"Warm",
+      "high":"High",
+      "moderate":"Moderate",
+      "low":"Low",
+      "reset":"Reset",
+      "go":"Go"
+    }   ,
+    "language": {
+      "title":"Choose Language",
+      "en":"English",
+      "es":"Spanish"
+    }
+  }
+}

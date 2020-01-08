@@ -27,7 +27,7 @@ const routes: Routes = [
     component: StormComponent
   },
   { path: '**',
-    component: CreateSnowstormComponent
+    component: StormComponent
   }
 ];
 

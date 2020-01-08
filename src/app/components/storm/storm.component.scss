@@ -1,5 +1,5 @@
 .storm-main {
-  background-image: url("/sites/default/files/interactives/storm/assets/images/storm-bg.png");
+  background-image: url("/assets/images/storm-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   border: solid 1px black;
@@ -27,4 +27,24 @@
 
 .instruction-text {
   margin-bottom: 1vw;
+}
+h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 1.2vw;
+  background-color: #16407F;
+  color:#fff;
+  margin:0;
+  padding:10px;
+}
+.language_options {
+  font-family: Roboto, sans-serif;
+  font-size: 1vw;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  background: rgba(255, 255, 255, 0.5);
+  border: solid 2px white;
+
+  mat-radio-button {
+    padding:10px;
+  }
 }

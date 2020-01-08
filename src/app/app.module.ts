@@ -36,17 +36,17 @@ import { CreateSnowstormComponent } from "./components/create-snowstorm/create-s
 import { SidebarComponent } from './components/create-snowstorm/sidebar/sidebar.component';
 import { MapContainerComponent } from './components/create-snowstorm/map-container/map-container.component';
 import { VideoComponent } from './components/create-snowstorm/video/video.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 import * as fromServices from "./services";
 import { PredictComponent } from "./components/predict/predict.component";
 
 
-
-
-
-
-
-
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -81,7 +81,15 @@ import { PredictComponent } from "./components/predict/predict.component";
     MatRadioModule,
     FlexLayoutModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
   DragService,

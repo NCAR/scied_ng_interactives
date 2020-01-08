@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
 import { Subscription } from "rxjs";
+import { TranslateService } from '@ngx-translate/core';
+import { MatRadioChange } from '@angular/material';
 
 interface StormValues {
   highLevelTemperature: number;
@@ -18,21 +20,38 @@ export class StormComponent implements OnInit, OnDestroy {
   smallWindow = false;
   backgroundImage = "storm-bg.png";
   layoutChanges: Subscription;
+  currentLang:any = 'en';
+  feedback:any = {
+    "tryagain": "thunderstorm.feedback.tryagain",
+    "small": "thunderstorm.feedback.small",
+    "medium": "thunderstorm.feedback.medium",
+    "large": "thunderstorm.feedback.large"
+  };
 
   constructor(
     private snackBar: MatSnackBar,
-    private breakpointObserver: BreakpointObserver
-  ) {}
+    private breakpointObserver: BreakpointObserver,
+    private translate: TranslateService
+  ) {
+    this.currentLang = this.translate.currentLang;
+  }
 
+
+  changeLanguage($event: MatRadioChange) {
+      this.translate.use($event.value.match(/en|es/) ? $event.value : 'en');
+
+  }
   openSnackBar(message: string) {
-    this.snackBar.open(message, "", { duration: 10000 });
+    this.getTranslation(message);
   }
 
   playAudio(audioFile: string) {
-    const audio = new Audio();
-    audio.src = `/sites/default/files/interactives/storm/assets/audio/${audioFile}`;
-    audio.load();
-    audio.play();
+    if(this.currentLang == 'en'){
+      const audio = new Audio();
+      audio.src = `/assets/audio/${audioFile}`;
+      audio.load();
+      audio.play();
+    }
   }
 
   resetStorm() {
@@ -43,42 +62,38 @@ export class StormComponent implements OnInit, OnDestroy {
     this.backgroundImage = this.smallWindow
       ? "thunderstorm_small_sm.gif"
       : "thunderstorm_small.gif";
-    this.openSnackBar(
-      "Great job!  You've made a small storm.  Do you know how to make it larger?"
-    );
-    this.playAudio("small_storm.mp3");
+    this.openSnackBar( this.feedback.small );
+    this.playAudio("small_storm_"+this.translate.currentLang+".mp3");
   }
 
   mediumThunderstorm() {
     this.backgroundImage = this.smallWindow
       ? "thunderstorm_med_sm.gif "
       : "thunderstorm_med.gif";
-    this.openSnackBar(
-      "Great job!  You've made a medium sized storm.  Choose other combinations to make a larger or smaller thunderstorm."
-    );
-    this.playAudio("medium_storm.mp3");
+    this.openSnackBar( this.feedback.medium );
+    this.playAudio("medium_storm_"+this.translate.currentLang+".mp3");
   }
 
   largeThunderstorm() {
     this.backgroundImage = this.smallWindow
       ? "thunderstorm_large_sm.gif"
       : "thunderstorm_large.gif";
-    this.openSnackBar(
-      "Congratulations!  You've made a big storm!  Choose other combinations to make smaller thunderstorms."
-    );
-    this.playAudio("large_storm.mp3");
+    this.openSnackBar( this.feedback.large );
+    this.playAudio("large_storm_"+this.translate.currentLang+".mp3");
   }
 
   noStorm() {
     this.backgroundImage = this.smallWindow
       ? "storm-bg-sm.png"
       : "storm-bg.png";
-    this.openSnackBar(
-      "Try again.  Did you know that a thunderstorm needs warm, humid air near the ground and cooler air above?"
-    );
-    this.playAudio("try_again.mp3");
+    this.openSnackBar(this.feedback.tryagain );
+    this.playAudio("try_again_"+this.translate.currentLang+".mp3");
   }
-
+  getTranslation(val){
+    this.translate.get(val).subscribe((res: string) => {
+        this.snackBar.open(res, "", { duration: 10000 });
+    });
+  }
   checkValues(stormValues: StormValues) {
     if (stormValues.highLevelTemperature === 1) {
       if (stormValues.humidity === 1) {

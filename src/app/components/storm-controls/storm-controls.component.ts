@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { FormGroup, FormBuilder } from "@angular/forms";
+import { TranslateService } from '@ngx-translate/core';
 
 interface StormValues {
   highLevelTemperature: number;
@@ -18,7 +19,8 @@ export class StormControlsComponent implements OnInit {
   stormValues: StormValues;
   stormForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+    private translate: TranslateService) {
     this.stormForm = this.formBuilder.group({
       highLevelTemperature: [2],
       humidity: [2],

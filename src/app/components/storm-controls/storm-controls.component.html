@@ -1,14 +1,14 @@
 <form [formGroup]="stormForm">
   <div class="storm-controls">
     <div class="high-level-temperature">
-      High Level Temperature
+      {{ 'thunderstorm.controls.highlvltemp' | translate }}
       <button
         #highLevelTooltip="matTooltip"
         (click)="highLevelTooltip.toggle()"
         mat-icon-button
         aria-label="help"
         matTooltipPosition="right"
-        matTooltip="Chilly air up high allows water vapor to condense into water droplets, which make up the clouds of a thunderstorm.  The cooled air flows downward."
+        matTooltip="{{ 'thunderstorm.controls.highlvltemptoolbar' | translate }}"
       >
         <mat-icon class="help-icon toggle-icon">help</mat-icon>
       </button>
@@ -26,19 +26,20 @@
       ></mat-slider>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-around">
-      <div>Very Cold</div>
-      <div>Cold</div>
-      <div>Cool</div>
+      <div>{{ 'thunderstorm.controls.verycold' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.cold' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.cool' | translate }}</div>
     </div>
     <div class="humidity">
-      Humidity
+
+        {{ 'thunderstorm.controls.humidity' | translate }}
       <button
         #humidityTooltip="matTooltip"
         (click)="humidityTooltip.toggle()"
         mat-icon-button
         aria-label="help"
         matTooltipPosition="right"
-        matTooltip="Moisture in the air is needed for clouds and rain.  When warm, humid air rises, the cumulus and, eventually, cumulonimbus clouds of a thunderstorm form."
+        matTooltip="{{ 'thunderstorm.controls.humiditytoolbar' | translate }}"
       >
         <mat-icon class="help-icon toggle-icon">help</mat-icon>
       </button>
@@ -56,19 +57,19 @@
       ></mat-slider>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-around">
-      <div>High</div>
-      <div>Moderate</div>
-      <div>Low</div>
+      <div>{{ 'thunderstorm.controls.high' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.moderate' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.low' | translate }}</div>
     </div>
     <div class="low-level-temperature">
-      Low Level Temperature
+        {{ 'thunderstorm.controls.lowlvltemp' | translate }}
       <button
         #lowLevelTooltip="matTooltip"
         (click)="lowLevelTooltip.toggle()"
         mat-icon-button
         aria-label="help"
         matTooltipPosition="right"
-        matTooltip="Warm air near the ground allows water to evaporate into vapor, adding moisture to the storm.  Because warm air rises, so does the moisture."
+        matTooltip="{{ 'thunderstorm.controls.lowlvltemp' | translate }}"
       >
         <mat-icon class="help-icon toggle-icon">help</mat-icon>
       </button>
@@ -85,19 +86,19 @@
         ></mat-slider>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-around">
-        <div>Cold</div>
-        <div>Cool</div>
-        <div>Warm</div>
+        <div>{{ 'thunderstorm.controls.cold' | translate }}</div>
+        <div>{{ 'thunderstorm.controls.cool' | translate }}</div>
+        <div>{{ 'thunderstorm.controls.warm' | translate }}</div>
       </div>
     </div>
   </div>
   <div class="storm-buttons">
     <div fxLayout="row" fxLayoutAlign="space-between">
       <button mat-raised-button class="storm-button" (click)="resetStorm()">
-        Reset
+        {{ 'thunderstorm.controls.reset' | translate }}
       </button>
       <button mat-raised-button class="storm-button" (click)="checkStorm()">
-        Go
+        {{ 'thunderstorm.controls.go' | translate }}
       </button>
     </div>
   </div>
