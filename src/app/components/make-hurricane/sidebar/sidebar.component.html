@@ -1,0 +1,31 @@
+<h1 id="maintitle">Make a HURRICANE</h1>
+<div id="infobox" class="basebox">
+	<p>What makes a hurricane stronger? What makes a hurricane weaker?</p>
+    <p>The temperature of the sea, moisture in the air, and high winds all play a role.</p>
+    <p>Drag the hurricane over the ocean to see what happens.</p>
+</div>
+
+<br>
+
+<div id="accordion-container">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <strong>The size of storms</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>The Saffir-Simpson hurricane scale is used to describe the strength of hurricanes based on wind speed, which helps emercency managers estimate the threat of a storm.  Category 1 storms have winds over 74 mph, while category 5 storms have winds over 155mph.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <strong>About the data</strong>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Conditions of air temperature, wind, and sea surface temperature are set to average September values 1979-2011.</p>
+        <p>Background image courtesy of NASA. Data courtesy of NOAA.</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>

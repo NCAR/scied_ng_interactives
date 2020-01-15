@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  pathAssets: 'http://localhost:4200/assets/'
+  pathAssets: 'http://localhost:9876/assets/'
 };

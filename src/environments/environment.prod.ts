@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  pathAssets: '/sites/default/files/interactives/make-hurricane/assets/'
 };

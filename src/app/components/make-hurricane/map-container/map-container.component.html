@@ -1,0 +1,271 @@
+<div id="map-draggable-wrap" class="drag-boundary"  (click)="clearOutcomes()">
+    <!-- map backgrounds -->
+    <img [src]="mapBaseImg" class="map-bkg {{map1}}" >
+    <img [src]="mapSstempImg" class="map-bkg {{sstemp}}" >
+    <img [src]="mapMoistImg" class="map-bkg {{moist}}" >
+    <img [src]="mapWindImg" class="map-bkg {{wind}}" >
+
+    <!-- overlay reset button -->
+    <button id="map-close-button" class="{{closeButton}}" (click)="hideMapOverlay()">X</button>
+
+    <!-- map type info -->
+    <div class="map-type-info {{sstemp}}">
+        <h2>Sea Surface Temperature</h2><p>
+        The water temperature at the ocean surface (known as sea surface temperature)
+        impacts the strength of a hurricane. Warm water fuels the storm, and creates higher humidity in the air.
+        </p>
+    </div>
+
+    <div class="map-type-info {{moist}}">
+        <h2>Moisture</h2><p>
+        Hurricanes require moisture in the air, or humidity. When the humid air is forced upward,
+        clouds form and rain falls.  Hurricanes produce a tremendous amount of rain.
+        </p>
+    </div>
+
+    <div class="map-type-info {{wind}}">
+        <h2>Wind</h2><p>
+        If upper level winds are too speedy, hurricanes are not likely to form.
+        In places where upper level winds are calm, hurricanes are more likely to form and grow.
+        </p>
+    </div>
+
+    <!-- map hurricane blurbs -->
+    <div class="hurr-outcome {{hoa[1]}}">
+        <h2>Strong hurricane weakens</h2><p>
+        Your hurricane got into cooler water and stronger winds at the northern end of the Gulf of Mexico.
+        It may have been larger furter south, but here it is weakening.
+        </p>
+        <button class="panel-exit" (click)="clearOutcomes()">x</button>
+    </div>
+
+    <div class="hurr-outcome {{hoa[3]}} {{hoa[5]}} {{hoa[10]}}">
+        <h2>Hurricane weakens</h2><p>
+        Hurricanes can survive in this area, but conditions are not ideal.
+        A big storm can weaken here since ocean temperatures are cooler, air is less humid,
+        and upper level winds are higher.
+        </p>
+        <button class="panel-exit" (click)="clearOutcomes()">x</button>
+    </div>
+
+    <div class="hurr-outcome {{hoa[2]}}">
+        <h2>Hurricane grows very strong</h2><p>
+        Your hurricane is growing into a massive storm because it has just the conditions it needs to grow - warm water, calm winds above, and humidity.
+        </p>
+        <button class="panel-exit" (click)="clearOutcomes()">x</button>
+    </div>
+
+    <div class="hurr-outcome {{hoa[4]}} {{hoa[6]}}">
+        <h2>Strong hurricane thrives</h2><p>
+        Conditions are pretty good for strong hurricanes here. The water is warm, the winds are calm up high, and the air is humid.
+        </p>
+        <button class="panel-exit" (click)="clearOutcomes()">x</button>
+    </div>
+
+    <div class="hurr-outcome {{hoa[7]}} {{hoa[8]}} {{hoa[9]}} {{hoa[11]}}">
+        <h2>No hurricane here!</h2><p>
+        Hurricanes and tropical storms don't typically form here.
+        It's too windy, the ocean is too cold, and there is less moisture in the air.
+        </p>
+        <button class="panel-exit" (click)="clearOutcomes()">x</button>
+    </div>
+
+    <div class="hurr-outcome {{hoa[0]}} {{hoa[12]}}">
+        <h2>Hurricane forms and grows</h2><p>
+        Your hurricane is heading west and growing in size. It is in an area with just the right conditions: warm water, calm winds, and moisture.
+        </p>
+        <button class="panel-exit" (click)="clearOutcomes()">x</button>
+    </div>
+
+    <!-- small instructions snippet -->
+    <div id="snippet">
+        <p>Drag <span><img [src]="symbolImg" height="18" alt="hurricane symbol"></span> to circles on the map.</p>
+    </div>
+
+    <!-- drag and drop interaction -->
+    <div cdkDropListGroup>
+    <div id="starter-list"
+        cdkDropList
+        [cdkDropListData]="starterList"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListEnterPredicate]="noReturnPredicate">
+
+        <div *ngFor="let item of starterList" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive">
+            </div>
+        </div>
+    </div>
+
+    <!-- droppable areas TODO: CANNOT OVERCOME LOOPING ERROR ON DROPLISTDATA TO CREATE AREAS DYNAMICALLY
+    <div *ngFor="let dropArea of dropAreas; let i = index;" id="a{{i}}" class="droppable-area"
+        cdkDropList
+        cdkDropListData="dropArea{{i}}"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea[i]" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive">
+            </div>
+        </div>
+    </div> -->
+    <div id="a0" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea0"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea0" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive forms">
+            </div>
+        </div>
+    </div>
+    <div id="a1" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea1"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea1" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive shrink">
+            </div>
+        </div>
+    </div>
+    <div id="a2" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea2"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea2" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive grow">
+            </div>
+        </div>
+    </div>
+    <div id="a3" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea3"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea3" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive shrink">
+            </div>
+        </div>
+    </div>
+    <div id="a4" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea4"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea4" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive grow">
+            </div>
+        </div>
+    </div>
+    <div id="a5" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea5"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea5" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive shrink">
+            </div>
+        </div>
+    </div>
+    <div id="a6" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea6"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea6" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive grow">
+            </div>
+        </div>
+    </div>
+    <div id="a7" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea7"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea7" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="no-hurr static">
+                <div class="no-hurr-symbol"></div>
+            </div>
+        </div>
+    </div>
+    <div id="a8" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea8"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea8" cdkDrag cdkDragBoundary=".drag-boundary">
+                <div class="no-hurr static">
+                        <div class="no-hurr-symbol"></div>
+                    </div>
+        </div>
+    </div>
+    <div id="a9" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea9"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea9" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="no-hurr static">
+                <div class="no-hurr-symbol"></div>
+            </div>
+        </div>
+    </div>
+    <div id="a10" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea10"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea10" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive shrink">
+            </div>
+        </div>
+    </div>
+    <div id="a11" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea11"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea11" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="no-hurr static">
+                <div class="no-hurr-symbol"></div>
+            </div>
+        </div>
+    </div>
+    <div id="a12" class="droppable-area"
+        cdkDropList
+        [cdkDropListData]="dropArea12"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let item of dropArea12" cdkDrag cdkDragBoundary=".drag-boundary">
+            <div class="hurr-symbol rotating">
+                <img [src]="symbolImg" class="img-responsive forms">
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+</div>
+<div id="submaps-wrap" class="">
+    <div id="map-sstemp" class="col-xs-4">
+        <a href="javascript:void(0)" class="map-type-selector" (click)="selectMapOverlay('sstemp')">
+        <div class="marker-boundary">
+            <div id="sst-marker" class="dot-marker" [style.left]="thumbX" [style.top]="thumbY"></div>
+        </div>
+        </a>
+    </div>
+    <div id="map-moist" class="col-xs-4">
+        <a href="javascript:void(0)" class="map-type-selector" (click)="selectMapOverlay('moist')">
+        <div class="marker-boundary">
+            <div id="m-marker" class="dot-marker" [style.left]="thumbX" [style.top]="thumbY"></div>
+        </div>
+        </a>
+    </div>
+    <div id="map-wind" class="col-xs-4">
+        <a href="javascript:void(0)" class="map-type-selector" (click)="selectMapOverlay('wind')">
+        <div class="marker-boundary">
+           <div id="w-marker" class="dot-marker" [style.left]="thumbX" [style.top]="thumbY"></div>
+        </div>
+        </a>
+    </div>
+</div>
+<p id="tap-instructions">Tap to select a map and explore how each factor affects hurricanes.</p>

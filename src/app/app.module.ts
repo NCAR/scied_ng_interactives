@@ -20,10 +20,15 @@ import { MatDialogModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { DroppableDirective } from './components/create-snowstorm/droppable.directive';
-import { DraggableDirective } from './components/create-snowstorm/draggable.directive';
-import { DragService } from './components/create-snowstorm/drag.service';
+import { DroppableDirective } from './components/make-hurricane/droppable.directive';
+import { DraggableDirective } from './components/make-hurricane/draggable.directive';
+import { DragService } from './components/make-hurricane/drag.service';
 import { ReloadService } from './components/create-snowstorm/reload.service';
+
+import { HurrSidebarComponent } from './components/make-hurricane/sidebar/sidebar.component';
+import { HurrMapContainerComponent } from './components/make-hurricane/map-container/map-container.component';
+import { MakeHurricaneComponent } from "./components/make-hurricane/make-hurricane.component";
+
 
 import { LayoutModule } from "@angular/cdk/layout";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -61,6 +66,9 @@ export function createTranslateLoader(http: HttpClient) {
     PredictComponent,
     MapContainerComponent,
     SidebarComponent,
+    HurrMapContainerComponent,
+    HurrSidebarComponent,
+    MakeHurricaneComponent,
     VideoComponent
   ],
   imports: [

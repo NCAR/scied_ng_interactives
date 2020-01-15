@@ -4,6 +4,7 @@ import { StormComponent } from "./components/storm/storm.component";
 import { HurricaneComponent } from "./components/hurricane/hurricane.component";
 import { PredictComponent } from "./components/predict/predict.component";
 import { CreateSnowstormComponent } from "./components/create-snowstorm/create-snowstorm.component";
+import { MakeHurricaneComponent } from "./components/make-hurricane/make-hurricane.component";
 
 const routes: Routes = [
   {
@@ -23,11 +24,15 @@ const routes: Routes = [
     component: CreateSnowstormComponent
   },
   {
+    path: "make-hurricane",
+    component: MakeHurricaneComponent
+  },
+  {
     path: '',
-    component: StormComponent
+    component: CreateSnowstormComponent
   },
   { path: '**',
-    component: StormComponent
+    component: CreateSnowstormComponent
   }
 ];
 
