@@ -38,7 +38,7 @@ export class StormComponent implements OnInit, OnDestroy {
 
 
   changeLanguage($event: MatRadioChange) {
-      this.translate.use($event.value.match(/en|es/) ? $event.value : 'en');
+      this.translate.use($event.value.match(/en|es|fr/) ? $event.value : 'en');
 
   }
   openSnackBar(message: string) {

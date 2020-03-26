@@ -16,14 +16,14 @@ body {
 */
 body {
 	background-color: #c5daf4;
-	background-image: url('/sites/default/files/interactives/make-hurricane/assets/apps/make-hurricane/background.jpg');
+	//background-image: url('/sites/default/files/interactives/make-hurricane/assets/apps/make-hurricane/background.jpg');
 	background-size: auto;; /*1920px 990px;*/
 	background-position: top center;
 	background-repeat: no-repeat;
 	float: none;
 	margin: 0px auto;
-	width: 1080px;
-	height: 600px;
+	/*width: 1080px;
+	height: 600px;*/
 }
 
 
@@ -37,7 +37,7 @@ body {
 
 
 
-/* for hurricane and thunderstorm
+ for hurricane and thunderstorm
 html,
 body {
   height: 100vh;
@@ -106,4 +106,3 @@ app-storm-controls {
     width: 90%;
   }
 }
-*/

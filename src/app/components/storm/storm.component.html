@@ -1,7 +1,7 @@
 <div
   class="storm-main"
   [ngStyle]="{
-    'background-image': 'url(/assets/images/' + backgroundImage + ')'
+    'background-image': 'url(/sites/default/files/interactives/storm/assets/images/' + backgroundImage + ')'
   }"
 >
   <div fxLayout="row" fxLayoutAlign="start">
@@ -20,9 +20,10 @@
         <mat-radio-group aria-labelledby="language-radio-group" [(ngModel)]="currentLang" (change)="changeLanguage($event)">
           <mat-radio-button value="en">{{ 'thunderstorm.language.en' | translate }}</mat-radio-button>
           <mat-radio-button value="es">{{ 'thunderstorm.language.es' | translate }}</mat-radio-button>
+          <mat-radio-button value="fr">{{ 'thunderstorm.language.fr' | translate }}</mat-radio-button>
         </mat-radio-group>
       </div>
-      <h2>Instructions</h2>
+      <h2>{{ 'thunderstorm.instructions.title' | translate }}</h2>
       <div class="instructions">
 
         <div class="instruction-text">

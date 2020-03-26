@@ -2,6 +2,7 @@
   "thunderstorm": {
     "title" :"MAKE A THUNDERSTORM",
     "instructions": {
+      "title": "Instructions",
       "line1":"Can you adjust the atmosphere to make a thunderstorm?",
       "line2":"Thunderstorms can only happen under certain conditions.",
       "line3":"What do temperature and humidity need to be like up high and near tothe ground to make a storm?"
@@ -38,7 +39,8 @@
     "language": {
       "title":"Choose Language",
       "en":"English",
-      "es":"Spanish"
+      "es":"Spanish",
+      "fr":"French"
     }
   }
 }
