@@ -13,7 +13,7 @@ import { HurricanePathComponent } from "../hurricane-path/hurricane-path.compone
   styleUrls: ["./predict.component.scss"]
 })
 export class PredictComponent implements OnInit, OnDestroy {
-  @ViewChild(HurricanePathComponent, { static: false })
+  @ViewChild(HurricanePathComponent)
   hurricanePathComponent: HurricanePathComponent;
   hurricaneForm: FormGroup;
   cityForm: FormGroup;

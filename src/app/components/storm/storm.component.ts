@@ -3,7 +3,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { BreakpointObserver, BreakpointState } from "@angular/cdk/layout";
 import { Subscription } from "rxjs";
 import { TranslateService } from '@ngx-translate/core';
-import { MatRadioChange } from '@angular/material';
+import { MatRadioChange } from '@angular/material/radio';
 
 interface StormValues {
   highLevelTemperature: number;

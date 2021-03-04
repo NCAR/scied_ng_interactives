@@ -16,7 +16,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatRadioModule } from "@angular/material/radio";
 
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';

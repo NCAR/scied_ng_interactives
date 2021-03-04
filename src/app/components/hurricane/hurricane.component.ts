@@ -17,7 +17,7 @@ interface DisableTemp {
   styleUrls: ["./hurricane.component.scss"]
 })
 export class HurricaneComponent implements OnInit {
-  @ViewChild(HurricanePathComponent, { static: false })
+  @ViewChild(HurricanePathComponent)
   hurricanePathComponent: HurricanePathComponent;
   disableLowTemp: DisableTemp;
   disableHighTemp: DisableTemp;

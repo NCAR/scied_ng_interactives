@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { ReloadService } from '../reload.service';
 import { delay } from 'q';
