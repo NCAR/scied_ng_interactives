@@ -16,7 +16,7 @@ export class VideoComponent implements OnInit {
 
   constructor() { }
 
-  @ViewChild('videoPlayer', null) videoplayer: ElementRef;
+  @ViewChild('videoPlayer', {static: false}) videoplayer: ElementRef;
 
   ngOnInit() {}
 

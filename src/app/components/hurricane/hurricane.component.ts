@@ -84,7 +84,7 @@ export class HurricaneComponent implements OnInit {
 
   playAudio(audioFile: string) {
     this.audio = new Audio();
-    this.audio.src = `/assets/audio/${audioFile}`;
+    this.audio.src = `/sites/default/files/interactives/predict-hurricane/assets/audio/${audioFile}`;
     this.audio.load();
     this.audio.play();
   }
@@ -92,7 +92,7 @@ export class HurricaneComponent implements OnInit {
   forecast() {
     if (this.selectedLow && this.selectedHigh) {
       this.playAudio("wind.mp3");
-      this.windsImage = `url(/assets/images/winds_${this.selectedLow}_${this.selectedHigh}.png)`;
+      this.windsImage = `url(/sites/default/files/interactives/predict-hurricane/assets/images/winds_${this.selectedLow}_${this.selectedHigh}.png)`;
       this.disableTemperatureSelection = true;
       this.showWindsToggle = true;
       this.showWinds = true;

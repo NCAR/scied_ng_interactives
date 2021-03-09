@@ -9,8 +9,12 @@ import {
   Input,
   Output
 } from "@angular/core";
-import { TweenMax, TimelineLite, Linear } from "gsap";
+import { gsap, TweenMax, TimelineLite, Linear } from "gsap";
+
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Path, PercentageChange } from "src/app/models/path";
+
+gsap.registerPlugin(MotionPathPlugin);
 
 @Component({
   selector: "app-hurricane-path",
@@ -81,12 +85,26 @@ export class HurricanePathComponent implements OnInit, OnChanges {
 
   moveHurricane(path: Path) {
     this.resetHurricane();
+
     this.tweens.push(
-      TweenMax.to(this.hurricaneContainer.nativeElement, 5, {
-        bezier: {
-          type: "cubic",
-          values: this.makeCurve(path)
-          // values: path.percentageChanges
+      /*
+      gsap.to(this.hurricaneContainer.nativeElement,
+        {
+          duration: 5,
+          motionPath:{
+            path:this.makeCurve(path)
+          },
+          ease: Linear.easeNone,
+          onComplete: () => {
+            this.tl.pause();
+            this.pathComplete.emit(true);
+          }
+        })*/
+      TweenMax.to(this.hurricaneContainer.nativeElement, {
+        duration: 5,
+        motionPath: {
+          path: this.makeCurve(path),
+          type: 'cubic'
         },
         ease: Linear.easeNone,
         onComplete: () => {

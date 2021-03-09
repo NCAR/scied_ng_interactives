@@ -303,7 +303,7 @@ export class MapContainerComponent implements OnInit {
 
 }
 
-  @ViewChild('snowAni', null) snowAnimation;
+  @ViewChild('snowAni', {static: false}) snowAnimation;
 
   ngOnInit() {
     this.subscription = this.reloadService.getReloadEmitter()
