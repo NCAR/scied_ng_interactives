@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+html, body { height: 100%; width:100%; font-family:'Poppins', sans-serif;}
+body {
+	background-color: #c5daf4;
+	background-size: auto;; /*1920px 990px;*/
+	background-position: top center;
+	background-repeat: no-repeat;
+	float: none;
+	margin: 0px auto;
+	/*width: 1080px;
+	height: 600px;*/
+}
+
+
+
+@media only screen and (max-width: 865px) {
+  body {
+    width:865px;
+  }
+}
+
+
+html,
+body {
+  height: 100vh;
+}
+
+app-storm,
+app-hurricane {
+  .mat-content {
+    font-size: 1vw;
+  }
+
+  .accordion {
+    .mat-accordion {
+      .mat-expansion-panel {
+        .mat-expansion-panel-body {
+          padding: 0 1vw 1vw;
+        }
+        .mat-expansion-panel-header {
+          height: 2vw !important;
+          padding: 1vw;
+          font-size: 1vw;
+        }
+
+        .mat-expansion-panel-content {
+          font-size: 1vw;
+          line-height: 1.2vw;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+app-hurricane {
+  .control-button,
+  .toggle-winds {
+    .mat-button-wrapper {
+      font-size: 1vw;
+    }
+  }
+
+  .mat-button-toggle-label-content {
+    line-height: 3vw !important;
+  }
+
+  .mat-button-toggle {
+    margin-bottom: 0.3vw;
+  }
+}
+
+app-storm-controls {
+  .mat-slider-track-wrapper {
+    transform: scaleY(5);
+    .mat-slider-track-background,
+    .mat-slider-track-fill {
+      background-color: #d6d6d6;
+    }
+  }
+
+  .mat-slider-thumb {
+    transform: scale(1.4) !important;
+    background-color: white !important;
+  }
+
+  mat-slider {
+    width: 90%;
+  }
+}

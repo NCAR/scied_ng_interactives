@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+::-webkit-scrollbar {
+    display: none;
+}
+html, body { height: 100%; width:100%; font-family:'Poppins', sans-serif;}
+
+
+body {
+	background-color: #c5daf4;
+	background-image: url('./assets_scss/background.jpg');
+	background-size: auto; /*1920px 990px;*/
+	background-position: top center;
+	background-repeat: no-repeat;
+	float: none;
+	margin: 0px auto;
+	/*width: 1080px;
+	height: 600px;*/
+}
+
+
+@media only screen and (min-width: 866px) {
+  body {
+    width:1080px;
+    background-size: 1920px 990px;
+  }
+}
+@media only screen and (max-width: 865px) {
+  body {
+    width:865px;
+  }
+}
+
+
+
+
+ for hurricane and thunderstorm
+html,
+body {
+  height: 100vh;
+}

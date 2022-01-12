@@ -1,0 +1,12 @@
+
+.main-container {
+  display: flex;
+  max-width: 1100px;
+}
+#interactive-stage {
+  flex-basis: 70%;
+}
+
+.primary-sidebar {
+  flex-basis: 30%;
+}

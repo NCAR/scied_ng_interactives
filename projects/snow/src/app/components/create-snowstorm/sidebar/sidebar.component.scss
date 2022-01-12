@@ -1,0 +1,60 @@
+//Title
+
+#maintitle {
+	font-weight: bold;
+	font-size: rem;
+	color: white;
+	text-shadow: 2px 1px 2px rgba(30,30,35,0.8);
+	text-align: left;
+}
+//Sidebar components
+.basebox {
+	border: 1px solid white;
+	background-color: rgba(255,255,255,0.5);
+	color: #333;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px
+}
+
+#infobox {
+	margin-bottom: 10px;
+	font-size: 1.3rem;
+}
+
+.se-button {
+	font-size: 2rem;
+	padding: 10px !important;
+	text-align: right;
+	margin-top:10px;
+}
+
+::ng-deep .mat-expansion-panel-body,
+::ng-deep .mat-expansion-panel-header {
+	font-size: 1.2em !important;
+}
+
+
+
+@media only screen and (max-width: 865px) {
+
+	.basebox {
+		background-color: rgba(255,255,255,1);
+	}
+
+	#maintitle {
+		font-size: 1.5rem;
+	}
+	#infobox {
+		font-size:.8rem;
+	}
+	#accordion-container {
+		display: none;
+	}
+	.se-button {
+		font-size: 1rem;
+		padding:5px 10px !important;
+	}
+
+}

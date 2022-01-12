@@ -1,0 +1,105 @@
+<form [formGroup]="stormForm">
+  <div class="storm-controls">
+    <div class="high-level-temperature">
+      {{ 'thunderstorm.controls.highlvltemp' | translate }}
+      <button
+        #highLevelTooltip="matTooltip"
+        (click)="highLevelTooltip.toggle()"
+        mat-icon-button
+        aria-label="help"
+        matTooltipPosition="right"
+        matTooltip="{{ 'thunderstorm.controls.highlvltemptoolbar' | translate }}"
+      >
+        <mat-icon class="help-icon toggle-icon">help</mat-icon>
+      </button>
+    </div>
+    <div
+      class="high-level-temp-slider storm-control-slider"
+      fxLayoutAlign="center center"
+    >
+      <mat-slider
+        min="1"
+        max="3"
+        step="1"
+        value="2"
+        formControlName="highLevelTemperature"
+      ></mat-slider>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around">
+      <div>{{ 'thunderstorm.controls.verycold' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.cold' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.cool' | translate }}</div>
+    </div>
+    <div class="humidity">
+
+        {{ 'thunderstorm.controls.humidity' | translate }}
+      <button
+        #humidityTooltip="matTooltip"
+        (click)="humidityTooltip.toggle()"
+        mat-icon-button
+        aria-label="help"
+        matTooltipPosition="right"
+        matTooltip="{{ 'thunderstorm.controls.humiditytoolbar' | translate }}"
+      >
+        <mat-icon class="help-icon toggle-icon">help</mat-icon>
+      </button>
+    </div>
+    <div
+      class="humidity-slider storm-control-slider"
+      fxLayoutAlign="center center"
+    >
+      <mat-slider
+        min="1"
+        max="3"
+        step="1"
+        value="2"
+        formControlName="humidity"
+      ></mat-slider>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around">
+      <div>{{ 'thunderstorm.controls.high' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.moderate' | translate }}</div>
+      <div>{{ 'thunderstorm.controls.low' | translate }}</div>
+    </div>
+    <div class="low-level-temperature">
+        {{ 'thunderstorm.controls.lowlvltemp' | translate }}
+      <button
+        #lowLevelTooltip="matTooltip"
+        (click)="lowLevelTooltip.toggle()"
+        mat-icon-button
+        aria-label="help"
+        matTooltipPosition="right"
+        matTooltip="{{ 'thunderstorm.controls.lowlvltemp' | translate }}"
+      >
+        <mat-icon class="help-icon toggle-icon">help</mat-icon>
+      </button>
+      <div
+        class="low-level-temp-slider storm-control-slider"
+        fxLayoutAlign="center center"
+      >
+        <mat-slider
+          min="1"
+          max="3"
+          step="1"
+          value="2"
+          formControlName="lowLevelTemperature"
+        ></mat-slider>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around">
+        <div>{{ 'thunderstorm.controls.cold' | translate }}</div>
+        <div>{{ 'thunderstorm.controls.cool' | translate }}</div>
+        <div>{{ 'thunderstorm.controls.warm' | translate }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="storm-buttons">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <button mat-raised-button class="storm-button" (click)="resetStorm()">
+        {{ 'thunderstorm.controls.reset' | translate }}
+      </button>
+      <button mat-raised-button class="storm-button" (click)="checkStorm()">
+        {{ 'thunderstorm.controls.go' | translate }}
+      </button>
+    </div>
+  </div>
+</form>
