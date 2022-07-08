@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild } from "@angular/core";
 import { Path } from "src/app/models/path";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { UntypedFormGroup, UntypedFormBuilder } from "@angular/forms";
 import { Subscription } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { PathService } from "src/app/services";
@@ -15,8 +15,8 @@ import { HurricanePathComponent } from "../hurricane-path/hurricane-path.compone
 export class PredictComponent implements OnInit, OnDestroy {
   @ViewChild(HurricanePathComponent)
   hurricanePathComponent: HurricanePathComponent;
-  hurricaneForm: FormGroup;
-  cityForm: FormGroup;
+  hurricaneForm: UntypedFormGroup;
+  cityForm: UntypedFormGroup;
   path: Path;
   showWinds = false;
   windsImage: string;
@@ -51,7 +51,7 @@ export class PredictComponent implements OnInit, OnDestroy {
   constructor(
     private pathService: PathService,
     private snackBar: MatSnackBar,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private breakpointObserver: BreakpointObserver
   ) {
     this.hurricaneForm = this.formBuilder.group({

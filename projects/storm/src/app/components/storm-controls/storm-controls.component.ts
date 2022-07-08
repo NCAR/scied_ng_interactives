@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { UntypedFormGroup, UntypedFormBuilder } from "@angular/forms";
 import { TranslateService } from '@ngx-translate/core';
 
 interface StormValues {
@@ -17,9 +17,9 @@ export class StormControlsComponent implements OnInit {
   @Output() checkValues = new EventEmitter<StormValues>();
   @Output() reset = new EventEmitter<boolean>();
   stormValues: StormValues;
-  stormForm: FormGroup;
+  stormForm: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
     private translate: TranslateService) {
     this.stormForm = this.formBuilder.group({
       highLevelTemperature: [2],

@@ -533,7 +533,6 @@
       }
     }
   },
-  "defaultProject": "ucar",
   "cli": {
     "analytics": false
   }
