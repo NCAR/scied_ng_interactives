@@ -1,0 +1,46 @@
+{
+  "thunderstorm": {
+    "title" :"Crea una tormenta eléctrica",
+    "instructions": {
+      "title": "Las instrucciones",
+      "line1":"¿Se puede modificar la atmósfera para crear una tormenta eléctrica?",
+      "line2":"Las tormentas eléctricas solo pueden ocurrir bajo ciertas condiciones.",
+      "line3":"¿Cómo deben ser la temperatura y la humedad en las alturas y cerca de la superficie para generar una tormenta?"
+    },
+    "questions": {
+        "question1": "¿Qué sucede cuando la temperatura cerca de la superficie es diferente de la temperatura en las alturas?",
+        "answer1":"A medida que sube el aire caliente de la superficie, este se enfría, lo que podría hacer que descienda nuevamente. Si la atmósfera es más fría más arriba, el aire continuará subiendo. Este movimiento, llamado convección, puede generar cúmulos y tormentas eléctricas.",
+        "question2": "¿Por qué es importante la humedad?",
+        "answer2":"Para provocar una tormenta, el aire de la superficie debe estar húmedo. Cuando sube el aire húmedo, se enfría un poco, forma nubes, pero se mantiene más caliente que el aire seco. Es más probable que el aire sea más caliente."
+    },
+    "feedback": {
+      "tryagain":"Inténtalo de nuevo. ¿Sabías que una tormenta eléctrica necesita aire caliente y húmedo cerca de la superficie y aire más frío arriba?",
+      "small":"¡Buen trabajo! Creaste una tormenta pequeña. ¿Sabes cómo hacerla más grande?",
+      "medium": "¡Buen trabajo! Creaste una tormenta de tamaño mediano. Elige otras combinaciones para crear una tormenta eléctrica más grande o más pequeña.",
+      "large": "¡Felicidades! ¡Creaste una tormenta grande! Elige otras combinaciones para hacer tormentas eléctricas más pequeñas."
+    },
+    "controls":{
+      "highlvltemp":"Temperaturas altas",
+      "highlvltemptoolbar":"El aire frío en lo alto permite que el vapor de agua se condense en gotas de agua, lo que forma las nubes de una tormenta eléctrica. El aire enfriado fluye hacia abajo.",
+      "humidity":"Humedad",
+      "humiditytoolbar":"Se necesita humedad en el aire para crear nubes y lluvia. Cuando el aire caliente y húmedo se eleva, se forman los cúmulos y, eventualmente, cumulonimbos de una tormenta eléctrica.",
+      "lowlvltemp":"Temperatura baja",
+      "lowlvltemptoolbar":"El aire caliente cerca de la superficie permite que el agua se evapore y se convierta en vapor, lo que agrega humedad a la tormenta. Como el aire caliente sube, también lo hace la humedad.",
+      "verycold":"Muy frío",
+      "cold": "Frío",
+      "cool":"Fresco",
+      "warm":"Caliente",
+      "high":"Alta",
+      "moderate":"Moderada",
+      "low":"Baja",
+      "reset":"Reiniciar",
+      "go":"Ir"
+    }   ,
+    "language": {
+      "title":"Elija idioma",
+      "en":"Inglés",
+      "es":"Español",
+      "fr":"Francés"
+    }
+  }
+}

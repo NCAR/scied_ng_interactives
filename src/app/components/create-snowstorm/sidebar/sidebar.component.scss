@@ -1,0 +1,60 @@
+//Title
+
+#maintitle {
+	font-weight: bold;
+	font-size: 3em;
+	color: white;
+	text-shadow: 2px 1px 2px rgba(30,30,35,0.8);
+	text-align: left;
+}
+//Sidebar components
+.basebox {
+	border: 1px solid white;
+	background-color: rgba(255,255,255,0.5);
+	color: #333;
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px
+}
+
+#infobox {
+	margin-bottom: 10px;
+	font-size: 1.3em;
+}
+
+.se-button {
+	font-size: 2em;
+	padding: 10px !important;
+	text-align: right;
+	margin-top:10px;
+}
+
+::ng-deep .mat-expansion-panel-body,
+::ng-deep .mat-expansion-panel-header {
+	font-size: 1.2em !important;
+}
+
+
+
+@media only screen and (max-width: 865px) {
+
+	.basebox {
+		background-color: rgba(255,255,255,1);
+	}
+
+	#maintitle {
+		font-size: 1.5em;
+	}
+	#infobox {
+		font-size:1em;
+	}
+	#accordion-container {
+		display: none;
+	}
+	.se-button {
+		font-size: 1em;
+		padding:5px 10px !important;
+	}
+
+}

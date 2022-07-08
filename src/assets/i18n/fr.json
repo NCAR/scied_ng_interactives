@@ -1,0 +1,46 @@
+{
+  "thunderstorm": {
+    "title" :"Créer un orage",
+    "instructions": {
+      "title": "Des instructions",
+      "line1":"Peut-on ajuster l’atmosphère pour créer un orage ?",
+      "line2":"Les orages ne se produisent que dans certaines conditions.",
+      "line3":"Quelles doivent être la température et l’humidité en altitude et près du sol pour qu’il y ait un orage ?"
+    },
+    "questions": {
+        "question1": "Que se passe-t-il lorsque la température près du sol est différente de la température en altitude ?",
+        "answer1":"À mesure que l’air chaud à la surface s’élève, il se refroidit et peut à nouveau redescendre. Si l’atmosphère est plus froide en altitude, l’air continuera de s’élever. Ce mouvement, appelé convection, peut entraîner la formation de cumulus et d’orages.",
+        "question2": "Quelle est l’importance de l’humidité ?",
+        "answer2":"Pour qu’il y ait un orage, l’air à la surface doit être humide. Lorsque l’air humide monte, il se refroidit un peu, forme des nuages, mais reste plus chaud que l’air sec. On parle alors d’air plus chaud."
+    },
+    "feedback": {
+      "tryagain":"Essayez de nouveau. Saviez-vous qu’un orage a besoin d’air chaud et humide près du sol et d’air plus frais en altitude ?",
+      "small":"Bien joué ! Vous avez créé une petite tempête. Pouvez-vous l’intensifier ?",
+      "medium": "Excellent travail ! Vous avez créé une tempête de taille moyenne. Choisissez d’autres combinaisons pour créer un orage plus ou moins violent.",
+      "large": "Félicitations ! Vous avez créé une forte tempête ! Choisissez d’autres combinaisons pour créer de plus petits orages."
+    },
+    "controls":{
+      "highlvltemp":"Température de haute altitude",
+      "highlvltemptoolbar":"L’air frais en altitude permet à la vapeur d’eau de se condenser en gouttelettes d’eau qui forment les nuages d’un orage. L’air refroidi circule vers le bas.",
+      "humidity":"Humidité",
+      "humiditytoolbar":"L’humidité dans l’air alimente les nuages et la pluie. Lorsque l’air chaud et humide s’élève, les cumulus et, éventuellement, les cumulonimbus d’un orage se forment.",
+      "lowlvltemp":"Température de basse altitude",
+      "lowlvltemptoolbar":"L’air chaud près du sol permet à l’eau de s’évaporer, ce qui ajoute de l’humidité à la tempête. L’air chaud monte, tout comme l’humidité.",
+      "verycold":"Très froid",
+      "cold": "Froid",
+      "cool":"Frais",
+      "warm":"Chaud",
+      "high":"Haut",
+      "moderate":"Modéré",
+      "low":"Bas",
+      "reset":"Réinitialiser",
+      "go":"Valider"
+    }   ,
+    "language": {
+      "title":"Choisissez la langue",
+      "en":"Anglais",
+      "es":"Espagnol",
+      "fr":"Francais"
+    }
+  }
+}
