@@ -29,10 +29,10 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HurricaneComponent
+    component: StormComponent
   },
   { path: '**',
-    component: HurricaneComponent
+    component: StormComponent
   }
 ];
 
